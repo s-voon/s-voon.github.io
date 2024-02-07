@@ -1,5 +1,21 @@
 ---
-title: "Home"
+title: "Sharon Voon"
+about:
+    template: trestles
+    image: imgs/profile.jpg
+    image-shape: round
+    links:
+        - icon: github
+          text: Github
+          href: https://github.com/s-voon
+        - icon: linkedin
+          text: LinkedIn
+          href: https://www.linkedin.com/in/sharonvoon/
+style:
+    - font-family: cursive
+    
 ---
 
-Hello~ Welcome to this page about me. I am currently a MDS student in the cohort 8 .This page will be updated as I learn more interesting stuff in this program. 
+Hello~ 
+
+I am Sharon Voon, a dedicated Master of Data Science student at the University of British Columbia. Passionate about data modelling and machine learning, I find joy in tackling challenging tasks that push the boundaries of my knowledge. With my degree in Chemical and Biological Engineering, I bring a unique blend of analytical thinking and engineering background to the field of data science. Outside of my academic pursuits, I love immersing myself in the beauty of nature through short hikes and find solace in the world of music and gaminmg. Let's connect and explore opportunities to collaborate! 
