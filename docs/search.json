@@ -28,20 +28,6 @@
     "text": "Embark on a journey with me as I share insights into creating a predictive diabetes classification model. Learn how to streamline your workflow by hosting a virtual environment using Docker, ensuring seamless software dependency management. Drawing from a group project during my MDS studies, where we explored decision tree and kNN algorithms with the 2015 BFRSS dataset, I’ll guide you through the process of developing scripts and analysis pipeline for non-interactive data analysis. While I won’t delve into the projects findings here, you can explore the complete source code and report here."
   },
   {
-    "objectID": "posts/diabetes_classification/index.html#github-source-code",
-    "href": "posts/diabetes_classification/index.html#github-source-code",
-    "title": "Diabetes Classification Model: Virtual Environment through Docker",
-    "section": "GitHub Source Code",
-    "text": "GitHub Source Code\nGitHub repository"
-  },
-  {
-    "objectID": "posts/diabetes_classification/index.html#diabetes-model-report",
-    "href": "posts/diabetes_classification/index.html#diabetes-model-report",
-    "title": "Diabetes Classification Model: Virtual Environment through Docker",
-    "section": "Diabetes model Report",
-    "text": "Diabetes model Report\nAnalysis Report"
-  },
-  {
     "objectID": "posts/diabetes_classification/index.html#introduction",
     "href": "posts/diabetes_classification/index.html#introduction",
     "title": "Diabetes Classification Model: Virtual Environment through Docker",
@@ -56,32 +42,11 @@
     "text": "Demystifying Docker: A High-Level Introduction to Containerization\n\n\n\nWhat is Conatinerization?\n\n\nContainers serve as a power solution for creating isolated computational environments. Distinct from virtual environments, they offer enhances isolation from the host operating system and provide a versatile platform for sharing various software, applications, and operating system dependencies. One of the most prevalent questions that often arises is: What is Docker, and why choose Docker?\nDocker, as a containerization software, is a platform meticulously crafted to empower developers in constructing, sharing, and executing container applications, thereby eliminating the hassles associated with intricate environment setups. We’ve all been through the common yet exasperating scenario in collaborative projects: ‘It works on my end. I am not sure why it isn’t working on your laptop.’\nDocker serves as a solution to this issue by allevating the burden of meticulous environment configuration and management. Furthermore, it seamlessly integrates with your existing tools, such as your GitHub repository, offering a consistent and reliable approach to containerized applications."
   },
   {
-    "objectID": "posts/diabetes_classification/index.html#setting-up-docker",
-    "href": "posts/diabetes_classification/index.html#setting-up-docker",
-    "title": "Diabetes Classification Model: Virtual Environment",
-    "section": "Setting up Docker",
-    "text": "Setting up Docker"
-  },
-  {
     "objectID": "posts/diabetes_classification/index.html#installing-docker",
     "href": "posts/diabetes_classification/index.html#installing-docker",
     "title": "Diabetes Classification Model: Virtual Environment through Docker",
     "section": "Installing Docker",
     "text": "Installing Docker\n\nTo get started, create a free Docker account here.\nOnce you have signed up and logged into Docket store, proceed to install Docker for your operating system. You can find the installtion instructions for windows here. Follow the steps outlines on the official page for a seamless installation experience."
-  },
-  {
-    "objectID": "posts/diabetes_classification/index.html#quick-example-to-run-a-simple-container",
-    "href": "posts/diabetes_classification/index.html#quick-example-to-run-a-simple-container",
-    "title": "Diabetes Classification Model: Virtual Environment",
-    "section": "Quick example to run a simple container",
-    "text": "Quick example to run a simple container"
-  },
-  {
-    "objectID": "posts/diabetes_classification/index.html#quick-tutorial-example-on-running-a-simple-container",
-    "href": "posts/diabetes_classification/index.html#quick-tutorial-example-on-running-a-simple-container",
-    "title": "Diabetes Classification Model: Virtual Environment",
-    "section": "Quick Tutorial: Example on running a simple container",
-    "text": "Quick Tutorial: Example on running a simple container\nOnce of the many benefits of container is that it also provide platform for sharing various software. Here we will try to use Docker to run a container that containes the RStudio server web-application installed. Make sure you are signed into your Docker Desktop before proceeding.\ndocker run --rm -p 8787:8787 -e PASSWORD=\"yourpassword\" rocker/rstudio:4.3.2\nHere the command -p tells Docker that you will be using a port to see RStudio in your web browser (at a location we specify afterwards as port 8787:8787). -rm ensures that when we quit the container, the container is deleted. This is to prevent wasting disk space where we would have to remove the container manually. If this is the first time you are running this Docker container, Docker will automatically search for the container hosted on DockerHub which is the equivalent of GitHub but for docket images and download it if it exists. The version 4.3.2 specified the specific RStudio version to download from the DockerHub. You would be able to access your local webapp at http:\\\\localhost:8787. You are now able to log in to RStudio webapp using: ‘rstudio’ as username and ‘yourpassword’ as password."
   },
   {
     "objectID": "posts/diabetes_classification/index.html#quick-tutorial-running-a-simple-container-example",
@@ -91,46 +56,11 @@
     "text": "Quick Tutorial: Running a Simple Container Example\nOne of the many benefits of container is their ability to provide a platform for sharing various software. Here we will utilize Docker to run a container containing the RStudio server web-application. Ensure that you are signed into your Docker Desktop before proceeding.\ndocker run --rm -p 8787:8787 -e PASSWORD=\"yourpassword\" rocker/rstudio:4.3.2\n\nBreakdown of the command\n\nThe -p flag informs Docker that a port will be used to access RStudio in your web browser, with the specified location as 8787:8787.\nThe -rm option ensures that when you exit the container, it is automatically deleted, preventing manual removal and saving disk space.\nThe -e flag is used to set environment variables within the container. Environment variables are key-value pairs that can be passed to a Docker container providing a way to configure the containerized application or modify its behaviour based on these varibles. -e PASSWORD=\"yourpassword\" sets the password for logging into the RStudio web app as ‘yourpassword’.\n\nIf this is your first time running this Docker container, Docker will automatically search for the container on DockerHub (equivalent to GitHub but for Docker images) and download it if it exists. The specified version 4.3.2, indicates the specific RStudio version to download from DockerHub.\nYou can now access your local web app at http:\\\\localhost:8787. Log into RStudio web app using: ‘rstudio’ as the username and ‘yourpassword’ as the password."
   },
   {
-    "objectID": "posts/diabetes_classification/index.html#building-docker-image",
-    "href": "posts/diabetes_classification/index.html#building-docker-image",
-    "title": "Diabetes Classification Model: Virtual Environment",
-    "section": "Building docker image",
-    "text": "Building docker image"
-  },
-  {
-    "objectID": "posts/diabetes_classification/index.html#building-docker-image-from-container-images",
-    "href": "posts/diabetes_classification/index.html#building-docker-image-from-container-images",
-    "title": "Diabetes Classification Model: Virtual Environment",
-    "section": "Building docker image from container images",
-    "text": "Building docker image from container images"
-  },
-  {
-    "objectID": "posts/diabetes_classification/index.html#building-the-docker-image-from-widely-used-dockerhub-container-registry",
-    "href": "posts/diabetes_classification/index.html#building-the-docker-image-from-widely-used-dockerhub-container-registry",
-    "title": "Diabetes Classification Model: Virtual Environment",
-    "section": "Building the docker image from widely-used DockerHub container registry:",
-    "text": "Building the docker image from widely-used DockerHub container registry:\nA container registry is a remote repository, or collection of repositories, used to share container images. Some widely-used container registry are DockerHub, quay, AWS, and more. We will focus on DockerHub in this tutorial.\nIt is a common and recommended practice to build a container image for your specific project on top of a base container image. Using a base image provides a clean and reproducible envinornment for your project, and it helps manage dependencies effectively. The benefits are not limited to consistency, efficiency, reproducibility and security.\nFor my group project, since we are coding using python, I chose a jupyter minimal-notebook image from quay.io that comes wiht ipykernel, ipython, and jupyterLab for a dynamic notebook. To incorporate this base image, we will need a DockerFile. A Dockerfile is a script used to create a Docker image. It serves as a set of instructions that Docker follows to build a container image for a specific application or service. The primary purposes and points of a Dockerfile are to define the base image and install specific dependencies. It is recommended to specify the version for your dependencies to avoid future clashing.\n\n\n\nDockerfile\n\n\n\nBreakdown of the Dockerfile\nThe Dockerfile for our specific projects looks like this:\nFROM quay.io/jupyter/minimal-notebook:2023-11-19\n\n# base image comes with ipykernel, ipython, jupyterLab\n\nRUN conda install -y pandas=2.1.3 \\\n    altair=5.1.2 \\\n    scikit-learn=1.3.2 \\\n    vegafusion=1.4.5 \\\n    vegafusion-python-embed \\\n    click=8.1.7 \\\n    jupyter-book=0.15.1 \\\n    make=4.3\n\nRUN pip install vl-convert-python==1.1.0 \\\n    pytest==7.4.3 \\\n    ucimlrepo==0.0.3 \\\n    myst-nb==0.17.2\nA typical Dockerfile typically start with a FROM command that specifies which abse image the new image should be built off. Docker images are built in layers to helps them more light weight. The RUN command install new software, ore execute configuration commands. I like to split up the installation process through the channel they are installing from. In this case, all the dependencies that are installed from conda are under one command, and all dependencies from pip are under a separate command. -y flag is needed for the conda command as you need to approve the dependencies before installation when you are using conda channel."
-  },
-  {
     "objectID": "posts/diabetes_classification/index.html#building-the-docker-image-from-a-widely-used-dockerhub-container-registry",
     "href": "posts/diabetes_classification/index.html#building-the-docker-image-from-a-widely-used-dockerhub-container-registry",
     "title": "Diabetes Classification Model: Virtual Environment through Docker",
     "section": "Building the Docker Image from a Widely-Used DockerHub Container Registry",
     "text": "Building the Docker Image from a Widely-Used DockerHub Container Registry\nA container registry serves as a remote repository or collection of repositories for sharing container images. Notable container registries include DockerHub, Quay, AWS, and more. In this tutorial, we will focus on DockerHub.\nIt is a common and recommended practice to construct a container image tailored to your project atop a base container image. Utilizing a base image ensures a clean and reproducible environment, facilitating effective dependency management. The advantages extend beyond consistensy, efficiency, reproducibility, and security.\nFor our group project, coded in Python Language, we opted for a Jupyter minimal-notebook image from quay.io, equipped with ipykernel, ipython, and jupyterLab for a dynamic notebook experience. To integrate this base image, a DockerFile is required. A Dockerfile serves as a script guiding the creation of a Docker image offering instructions for Docker to follow in building a container image specific to an application or service. The primary purposes of a Dockerfile are to define the base image and install specific dependencies. It is advisable to specify version numbvers for dependencies to prevent potential clashes in the future.\n\n\n\nDockerfile\n\n\n\nBreakdown of the Dockerfile\nOur Dockerfile is structured as follows:\nFROM quay.io/jupyter/minimal-notebook:2023-11-19\n\n# base image comes with ipykernel, ipython, jupyterLab\n\nRUN conda install -y pandas=2.1.3 \\\n    altair=5.1.2 \\\n    scikit-learn=1.3.2 \\\n    vegafusion=1.4.5 \\\n    vegafusion-python-embed \\\n    click=8.1.7 \\\n    jupyter-book=0.15.1 \\\n    make=4.3\n\nRUN pip install vl-convert-python==1.1.0 \\\n    pytest==7.4.3 \\\n    ucimlrepo==0.0.3 \\\n    myst-nb==0.17.2\nA typical Dockerfile commences with a FROM command, specifying the base image upon which the new image will be built off. Docker images are constructed in layers to maintain a lightweight profile. The subsequent RUN commands install new software or execute configuration commands. To enhance redability and organization, the installation process is segmented based on the channels from which dependencies are sourced. In this instance, dependencies installed through conda are grouped together, while those installed via pip are managed separately. The -y flag is essential for the conda command, requiring approval of dependencies before installation when using the conda channel.\nTo ensure the Dockerfile functions as intended, we verify its functionality by building the image locally. Run the following command from the directory where the Dockerfile is situated:\ndocker build --tag diabetes_classification:v1 .\ndocker run --rm -it diabetes_classification:v1\n\nThe --tag flag designates the name of the Docker Image. Here, it is set to ‘test1’ with a version number of ‘v1’\nThe . denotes the current working directory, indicating that the Dockerfile is located in the same directory where the command is executed\n\nPress Ctrl + C to shut down this jupyter notebook."
-  },
-  {
-    "objectID": "posts/diabetes_classification/index.html#setting-up-docker-compose.yml",
-    "href": "posts/diabetes_classification/index.html#setting-up-docker-compose.yml",
-    "title": "Diabetes Classification Model: Virtual Environment",
-    "section": "Setting up docker-compose.yml",
-    "text": "Setting up docker-compose.yml"
-  },
-  {
-    "objectID": "posts/diabetes_classification/index.html#launching-dockerimage-in-a-container",
-    "href": "posts/diabetes_classification/index.html#launching-dockerimage-in-a-container",
-    "title": "Diabetes Classification Model: Virtual Environment",
-    "section": "Launching Dockerimage in a container",
-    "text": "Launching Dockerimage in a container\nTo launch the image as a container, docker run command is utilized. However, this command is often long, consisting of multiple flags to configure the environment variable which makes it error prone. Thus, we use docker-compose.yml file to record how the container should be launched. To launch the container interactively using this file, use the command: docker-compose up.\nOur Dockerfile is structed as follows:\nservices:\n  jupyter:\n    image:  test1\n    volumes:\n      - .:/home/jovyan\n    ports:\n      - 8888:8888\n    deploy:\n      resources:\n        limits:\n          memory: 5G\n    platform: linux/amd64\n\nBreakdown of the yaml file\nSetting up docker-compose.yml"
   },
   {
     "objectID": "posts/diabetes_classification/index.html#launching-docker-image-in-a-container",
@@ -152,5 +82,19 @@
     "title": "Diabetes Classification Model: Virtual Environment through Docker",
     "section": "Conclusion",
     "text": "Conclusion\nIn conclusion, this tutorial has guided you through the process of building and disseminating a virtual environment tailored for a predictive diabetes classification model using Docker. The utilization of Docker for environment management ensures reproducibility and eridicate compatibility concerns. Whether sharing the Dockerfile and docker-compose.yml for others to replicate the environment or pushing the image to DockerHub for convenient access, these practices enhance collaboration and streamline the deployment of your specific project. Embrace the efficiency and consistency that Docker provides, empowering your data science endeavors with a robust and shareable containerized solution.\nAdditionally, it’s worth nothing that in this project, we implemented a GitHub workflow to automate the building and pushing of updated Dockerfile to our DockerHub which is not covered in this tutorial. This further streamline the process, reinforcing the central concept."
+  },
+  {
+    "objectID": "posts/diabetes_classification/index.html#github-source-code",
+    "href": "posts/diabetes_classification/index.html#github-source-code",
+    "title": "Diabetes Classification Model: Virtual Environment through Docker",
+    "section": "GitHub Source Code",
+    "text": "GitHub Source Code\nGitHub repository"
+  },
+  {
+    "objectID": "posts/diabetes_classification/index.html#diabetes-model-report",
+    "href": "posts/diabetes_classification/index.html#diabetes-model-report",
+    "title": "Diabetes Classification Model: Virtual Environment through Docker",
+    "section": "Diabetes model Report",
+    "text": "Diabetes model Report\nAnalysis Report"
   }
 ]
