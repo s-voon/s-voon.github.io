@@ -1,0 +1,12 @@
+---
+title: "Projects"
+listing: 
+  contents: posts 
+  type: grid 
+  sort: "title" 
+  categories: true 
+  max-description-length: 100
+  grid-item-border: false
+  grid-columns: 3
+  image-height: "40"
+---
