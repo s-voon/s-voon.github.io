@@ -4,7 +4,7 @@
     "href": "posts.html",
     "title": "Projects",
     "section": "",
-    "text": "Diabetes Classification Model: Virtual Environment through Docker\n\n\n\nML Projects\n\n\n\nBuilding a Diabetes Classification Model: Leveraging Docker for Efficient Environment Management.\n\n\n\nSharon Voon\n\n\nFeb 9, 2024\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Autopredictor: Python Package\n\n\n\nPackage\n\n\n\nBuilding a Python package: Utilizing cookiecutter template for its simplicity and ease of use\n\n\n\nSharon Voon\n\n\nFeb 11, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDiabetes Classification Model: Virtual Environment through Docker\n\n\n\nML Project\n\n\nVirtual Env\n\n\nContainerization\n\n\n\nBuilding a Diabetes Classification Model: Leveraging Docker for Efficient Environment Management.\n\n\n\nSharon Voon\n\n\nFeb 9, 2024\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -96,5 +96,26 @@
     "title": "Diabetes Classification Model: Virtual Environment through Docker",
     "section": "Diabetes model Report",
     "text": "Diabetes model Report\nAnalysis Report"
+  },
+  {
+    "objectID": "posts/autopredictor_package/index.html",
+    "href": "posts/autopredictor_package/index.html",
+    "title": "Autopredictor: Python Package",
+    "section": "",
+    "text": "Welcome to the world of Python packages! If you’ve embarked on your coding journey using the Phyton language, chances are you’ve encountered Python packages. Some widely-used examples are numpy, pandas, and scikit-learn for machine learning models. In this tutorial, we’ll delve into the process of crafting your own Python package and publishing it on the Python Package Index(PyPI), a platform designed for hosting python packages. This enables others to seamlessly leverage your work with a simple import statement.\nPython pockages offer a structured and modular approach to organizing code, bundling related functionalities, classes, and resources. This results in a well-organized and scalable codebase, simplifying development, maintenance, and collboartion –essential tools for Python developers.\n\n\n\nModularity: Packages help break down complex projects into manageable and modular units, fostering a more organized code structure. This modularity also simplifies writing test cases targetting specific sections and functions.\nReusability: Once written, packages can be reused across various projects, saving time and effort by leveraging existing code.\nMaintainanility: Packages facilitate easier maintenance and updates, allowing developers to focus on specific parts of a project without affecting the entire codebase.\nDependency Management: Packages enable parallel development, where team members can work independently on different modules, promoting collboration and efficiency.\nVersion Control: Packages support versioning, ensuring compatibility and making it easier to manage changes in a project over time.\n\nUnderstanding and harnessing the power of Python packages is a fundamental skill for any Python developer. So, let’s dive in and explore how to create, use, and benefit from these modula building blocks in your Python projects!"
+  },
+  {
+    "objectID": "posts/autopredictor_package/index.html#introduction",
+    "href": "posts/autopredictor_package/index.html#introduction",
+    "title": "Autopredictor: Python Package",
+    "section": "",
+    "text": "Welcome to the world of Python packages! If you’ve embarked on your coding journey using the Phyton language, chances are you’ve encountered Python packages. Some widely-used examples are numpy, pandas, and scikit-learn for machine learning models. In this tutorial, we’ll delve into the process of crafting your own Python package and publishing it on the Python Package Index(PyPI), a platform designed for hosting python packages. This enables others to seamlessly leverage your work with a simple import statement.\nPython pockages offer a structured and modular approach to organizing code, bundling related functionalities, classes, and resources. This results in a well-organized and scalable codebase, simplifying development, maintenance, and collboartion –essential tools for Python developers.\n\n\n\nModularity: Packages help break down complex projects into manageable and modular units, fostering a more organized code structure. This modularity also simplifies writing test cases targetting specific sections and functions.\nReusability: Once written, packages can be reused across various projects, saving time and effort by leveraging existing code.\nMaintainanility: Packages facilitate easier maintenance and updates, allowing developers to focus on specific parts of a project without affecting the entire codebase.\nDependency Management: Packages enable parallel development, where team members can work independently on different modules, promoting collboration and efficiency.\nVersion Control: Packages support versioning, ensuring compatibility and making it easier to manage changes in a project over time.\n\nUnderstanding and harnessing the power of Python packages is a fundamental skill for any Python developer. So, let’s dive in and explore how to create, use, and benefit from these modula building blocks in your Python projects!"
+  },
+  {
+    "objectID": "posts/autopredictor_package/index.html#building-a-python-package-from-scratch",
+    "href": "posts/autopredictor_package/index.html#building-a-python-package-from-scratch",
+    "title": "Autopredictor: Python Package",
+    "section": "Building a Python package from scratch",
+    "text": "Building a Python package from scratch\nThrough this guide, I’ll be utilizing the autopredictor package, a project in which I was a part of the collaborative team."
   }
 ]

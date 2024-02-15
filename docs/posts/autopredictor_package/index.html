@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Sharon Voon">
+<meta name="dcterms.date" content="2024-02-11">
+<meta name="description" content="Building a Python package: Utilizing cookiecutter template for its simplicity and ease of use">
 
-<title>Introducing Myself - Projects</title>
+<title>Introducing Myself - Autopredictor: Python Package</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,24 +26,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -61,40 +62,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -104,7 +74,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Introducing Myself</span>
     </a>
   </div>
@@ -115,15 +85,15 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html" rel="" target="">
+    <a class="nav-link" href="../../index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html" rel="" target="">
+    <a class="nav-link" href="../../about.html" rel="" target="">
  <span class="menu-text">About Me</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./posts.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="../../posts.html" rel="" target="">
  <span class="menu-text">Projects</span></a>
   </li>  
 </ul>
@@ -134,109 +104,105 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Autopredictor: Python Package</h1>
+                  <div>
+        <div class="description">
+          Building a Python package: Utilizing cookiecutter template for its simplicity and ease of use
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">Package</div>
+              </div>
+                  </div>
+  </div>
+    
+  <div class="quarto-title-meta-author">
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-heading">Affiliation</div>
+    
+      <div class="quarto-title-meta-contents">
+      <p class="author"><a href="https://s-voon.github.io/">Sharon Voon</a> </p>
+    </div>
+      <div class="quarto-title-meta-contents">
+          <p class="affiliation">
+              Master of Data Science Student, UBC, 2023
+            </p>
+        </div>
+      </div>
+
+  <div class="quarto-title-meta">
+
+        
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">February 11, 2024</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Containerization">Containerization <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ML Project">ML Project <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Package">Package <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Virtual Env">Virtual Env <span class="quarto-category-count">(1)</span></div></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
+  <ul class="collapse">
+  <li><a href="#why-use-python-packages" id="toc-why-use-python-packages" class="nav-link" data-scroll-target="#why-use-python-packages">Why Use Python Packages:</a></li>
+  </ul></li>
+  <li><a href="#building-a-python-package-from-scratch" id="toc-building-a-python-package-from-scratch" class="nav-link" data-scroll-target="#building-a-python-package-from-scratch">Building a Python package from scratch</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Projects</h1>
-</div>
-
-
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-</header>
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>Welcome to the world of Python packages! If you’ve embarked on your coding journey using the Phyton language, chances are you’ve encountered Python packages. Some widely-used examples are numpy, pandas, and scikit-learn for machine learning models. In this tutorial, we’ll delve into the process of crafting your own Python package and publishing it on the Python Package Index(<a href="https://pypi.org/">PyPI</a>), a platform designed for hosting python packages. This enables others to seamlessly leverage your work with a simple import statement.</p>
+<p>Python pockages offer a structured and modular approach to organizing code, bundling related functionalities, classes, and resources. This results in a well-organized and scalable codebase, simplifying development, maintenance, and collboartion –essential tools for Python developers.</p>
+<section id="why-use-python-packages" class="level3">
+<h3 class="anchored" data-anchor-id="why-use-python-packages">Why Use Python Packages:</h3>
+<ol type="1">
+<li>Modularity: Packages help break down complex projects into manageable and modular units, fostering a more organized code structure. This modularity also simplifies writing test cases targetting specific sections and functions.</li>
+<li>Reusability: Once written, packages can be reused across various projects, saving time and effort by leveraging existing code.</li>
+<li>Maintainanility: Packages facilitate easier maintenance and updates, allowing developers to focus on specific parts of a project without affecting the entire codebase.</li>
+<li>Dependency Management: Packages enable parallel development, where team members can work independently on different modules, promoting collboration and efficiency.</li>
+<li>Version Control: Packages support versioning, ensuring compatibility and making it easier to manage changes in a project over time.</li>
+</ol>
+<p>Understanding and harnessing the power of Python packages is a fundamental skill for any Python developer. So, let’s dive in and explore how to create, use, and benefit from these modula building blocks in your Python projects!</p>
+</section>
+</section>
+<section id="building-a-python-package-from-scratch" class="level2">
+<h2 class="anchored" data-anchor-id="building-a-python-package-from-scratch">Building a Python package from scratch</h2>
+<p>Through this guide, I’ll be utilizing the <a href="https://pypi.org/project/autopredictor/">autopredictor</a> package, a project in which I was a part of the collaborative team.</p>
 
-<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Package" data-listing-date-sort="1707638400000" data-listing-file-modified-sort="1707717416105" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
-<a href="./posts/autopredictor_package/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left borderless">
-<p class="card-img-top">
-<img src="./posts/autopredictor_package/preview.png" class="thumbnail-image card-img" style="height: 40;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Autopredictor: Python Package
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Package'); return false;">
-Package
-</div>
-</div>
-<div class="card-text listing-description">
-Building a Python package: Utilizing cookiecutter template for its simplicity and ease of use
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Sharon Voon
-</div>
-<div class="listing-date">
-Feb 11, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="1" data-categories="ML Project,Virtual Env,Containerization" data-listing-date-sort="1707465600000" data-listing-file-modified-sort="1707713947893" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9">
-<a href="./posts/diabetes_classification/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left borderless">
-<p class="card-img-top">
-<img src="./posts/diabetes_classification/preview.png" class="thumbnail-image card-img" style="height: 40;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Diabetes Classification Model: Virtual Environment through Docker
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('ML Project'); return false;">
-ML Project
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Virtual Env'); return false;">
-Virtual Env
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Containerization'); return false;">
-Containerization
-</div>
-</div>
-<div class="card-text listing-description">
-Building a Diabetes Classification Model: Leveraging Docker for Efficient Environment Management.
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Sharon Voon
-</div>
-<div class="listing-date">
-Feb 9, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{voon2024,
+  author = {Voon, Sharon},
+  title = {Autopredictor: {Python} {Package}},
+  date = {2024-02-11},
+  url = {https://s-voon.github.io/posts/autopredictor_package/},
+  langid = {en}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-voon2024" class="csl-entry quarto-appendix-citeas" role="listitem">
+Voon, Sharon. 2024. <span>“Autopredictor: Python Package.”</span>
+February 11, 2024. <a href="https://s-voon.github.io/posts/autopredictor_package/">https://s-voon.github.io/posts/autopredictor_package/</a>.
+</div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

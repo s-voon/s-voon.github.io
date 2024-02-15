@@ -1,0 +1,35 @@
+---
+title: "Autopredictor: Python Package"
+description: "Building a Python package: Utilizing cookiecutter template for its simplicity and ease of use"
+author:
+  - name: Sharon Voon
+    url: https://s-voon.github.io/
+    affiliation: Master of Data Science Student, UBC, 2023
+date: 02-11-2024
+categories: [Package]
+citation: 
+  url: https://s-voon.github.io/posts/autopredictor_package/
+image: preview.png
+draft: false 
+---
+
+## Introduction
+
+Welcome to the world of Python packages! If you've embarked on your coding journey using the Phyton language, chances are you've encountered Python packages. Some widely-used examples are numpy, pandas, and scikit-learn for machine learning models. In this tutorial, we'll delve into the process of crafting your own Python package and publishing it on the Python Package Index([PyPI](https://pypi.org/)), a platform designed for hosting python packages. This enables others to seamlessly leverage your work with a simple import statement.
+
+Python pockages offer a structured and modular approach to organizing code, bundling related functionalities, classes, and resources. This results in a well-organized and scalable codebase, simplifying development, maintenance, and collboartion --essential tools for Python developers.
+
+### Why Use Python Packages:
+1. Modularity: Packages help break down complex projects into manageable and modular units, fostering a more organized code structure. This modularity also simplifies writing test cases targetting specific sections and functions.
+2. Reusability: Once written, packages can be reused across various projects, saving time and effort by leveraging existing code.
+3. Maintainanility: Packages facilitate easier maintenance and updates, allowing developers to focus on specific parts of a project without affecting the entire codebase.
+4. Dependency Management: Packages enable parallel development, where team members can work independently on different modules, promoting collboration and efficiency.
+5. Version Control: Packages support versioning, ensuring compatibility and making it easier to manage changes in a project over time.
+
+Understanding and harnessing the power of Python packages is a fundamental skill for any Python developer. So, let's dive in and explore how to create, use, and benefit from these modula building blocks in your Python projects!
+
+## Building a Python package from scratch
+Through this guide, I'll be utilizing the [autopredictor](https://pypi.org/project/autopredictor/) package, a project in which I was a part of the collaborative team.
+
+
+
