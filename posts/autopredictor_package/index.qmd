@@ -29,7 +29,41 @@ Python pockages offer a structured and modular approach to organizing code, bund
 Understanding and harnessing the power of Python packages is a fundamental skill for any Python developer. So, let's dive in and explore how to create, use, and benefit from these modula building blocks in your Python projects!
 
 ## Building a Python package from scratch
-Through this guide, I'll be utilizing the [autopredictor](https://pypi.org/project/autopredictor/) package, a project in which I was a part of the collaborative team.
+Through this guide, I'll be guide you through the process of creating a Python package from the ground up, using the [autopredictor](https://pypi.org/project/autopredictor/) package. As a contributor to the collborative team behind this project, our goal is to simplify the repetitive task of regression model selection and comparision within the machine learning workflow.
 
+The `autopredictor` package accelerates the exploration of eight regression models by evaluating them with default settings across four socring metrics. This approach allows users to quickly grasp the performance of each model. `autopredictor` caters to both beginners by eliminating the need for complicated model arguments and to experts by providing baseline results. You can find the source code of this package [here](#git-hub-repository) and the vingette documentation [here](#usage-documentation).
+
+### Source Code Development
+Before getting into the intricacies of package creationg, it is essential to develop the code we intend to transform into a package. This initial step aids in organizing the code into distinct functions, forming the foundation for the subsequent packaging process. In this context,
+ we refer to the core source code equivalent to those found under the `src/autopredictor` folder in this package repository. Once you have this code prepared, we can seamlessly process to establish the structure of our package.
+
+### Package structure
+A python package conventionally adheres to a specific structure, emphasizing the advantages of modularity and simplicity. The structure for the `autopredictor` package is outlined below, with files neatly categorized into three main groups:
+
+1. Package documentation:
+  - `README.md`: Provides essentioal information and instructions for users, typically a summary of what the package achieves.
+  -  `docs/`: Contains additinal documentation files or folder for example vingette.
+  - `pyproject.toml`: Instruction on how to build and install the package on a computer.
+2. Package source code:
+  - `__init__.py`: marks the directory as a Python package.
+  - Module files (`.py`): Houeses the core functinoalities, classes, and utilities.
+3. Package tests
+  - `test/`: Contains files for testing the package, ensuring functinality and realiability.
+
+#### Checkpoint:
+Make sure that you have installed the necessary tools, namely `cookiecutter` and `poetry`, as these will be integral to the package-building process in this tutorial. Follow the [Poetry installation instructions](https://python-poetry.org/docs/) for the `poetry` package. For `cookiecutter`, execute the following command in your terminal:
+```bash
+conda install -c conda-forge cookiecutter
+```
+
+### `coockiecutter` template
+One easy way to set up the structure is through leveraging the `cookiecutter` tool. `cookiecutter` is a easy-to-use tool for populating a directory structure from a pre-made template.
+
+
+## Git Hub repository
+Please find the source code repository [here](https://github.com/UBC-MDS/autopredictor). 
+
+## Usage Documentation
+Please find the vingette documentation for `autopredictor`'s usage example and the functions' descriptions [here](https://autopredictor.readthedocs.io/en/latest/?badge=latest).
 
 

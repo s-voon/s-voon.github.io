@@ -116,6 +116,20 @@
     "href": "posts/autopredictor_package/index.html#building-a-python-package-from-scratch",
     "title": "Autopredictor: Python Package",
     "section": "Building a Python package from scratch",
-    "text": "Building a Python package from scratch\nThrough this guide, I’ll be utilizing the autopredictor package, a project in which I was a part of the collaborative team."
+    "text": "Building a Python package from scratch\nThrough this guide, I’ll be guide you through the process of creating a Python package from the ground up, using the autopredictor package. As a contributor to the collborative team behind this project, our goal is to simplify the repetitive task of regression model selection and comparision within the machine learning workflow.\nThe autopredictor package accelerates the exploration of eight regression models by evaluating them with default settings across four socring metrics. This approach allows users to quickly grasp the performance of each model. autopredictor caters to both beginners by eliminating the need for complicated model arguments and to experts by providing baseline results. You can find the source code of this package here and the vingette documentation here.\n\nSource Code Development\nBefore getting into the intricacies of package creationg, it is essential to develop the code we intend to transform into a package. This initial step aids in organizing the code into distinct functions, forming the foundation for the subsequent packaging process. In this context, we refer to the core source code equivalent to those found under the src/autopredictor folder in this package repository. Once you have this code prepared, we can seamlessly process to establish the structure of our package.\n\n\nPackage structure\nA python package conventionally adheres to a specific structure, emphasizing the advantages of modularity and simplicity. The structure for the autopredictor package is outlined below, with files neatly categorized into three main groups:\n\nPackage documentation:\n\n\nREADME.md: Provides essentioal information and instructions for users, typically a summary of what the package achieves.\ndocs/: Contains additinal documentation files or folder for example vingette.\npyproject.toml: Instruction on how to build and install the package on a computer.\n\n\nPackage source code:\n\n\n__init__.py: marks the directory as a Python package.\nModule files (.py): Houeses the core functinoalities, classes, and utilities.\n\n\nPackage tests\n\n\ntest/: Contains files for testing the package, ensuring functinality and realiability.\n\n\nCheckpoint:\nMake sure that you have installed the necessary tools, namely cookiecutter and poetry, as these will be integral to the package-building process in this tutorial. Follow the Poetry installation instructions for the poetry package. For cookiecutter, execute the following command in your terminal:\nconda install -c conda-forge cookiecutter\n\n\n\ncoockiecutter template\nOne easy way to set up the structure is through leveraging the cookiecutter tool. cookiecutter is a easy-to-use tool for populating a directory structure from a pre-made template."
+  },
+  {
+    "objectID": "posts/autopredictor_package/index.html#git-hub-repository",
+    "href": "posts/autopredictor_package/index.html#git-hub-repository",
+    "title": "Autopredictor: Python Package",
+    "section": "Git Hub repository",
+    "text": "Git Hub repository\nPlease find the source code repository here."
+  },
+  {
+    "objectID": "posts/autopredictor_package/index.html#usage-documentation",
+    "href": "posts/autopredictor_package/index.html#usage-documentation",
+    "title": "Autopredictor: Python Package",
+    "section": "Usage Documentation",
+    "text": "Usage Documentation\nPlease find the vingette documentation for autopredictor‘s usage example and the functions’ descriptions here."
   }
 ]

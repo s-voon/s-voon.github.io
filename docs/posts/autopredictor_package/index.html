@@ -23,6 +23,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -159,7 +193,14 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#why-use-python-packages" id="toc-why-use-python-packages" class="nav-link" data-scroll-target="#why-use-python-packages">Why Use Python Packages:</a></li>
   </ul></li>
-  <li><a href="#building-a-python-package-from-scratch" id="toc-building-a-python-package-from-scratch" class="nav-link" data-scroll-target="#building-a-python-package-from-scratch">Building a Python package from scratch</a></li>
+  <li><a href="#building-a-python-package-from-scratch" id="toc-building-a-python-package-from-scratch" class="nav-link" data-scroll-target="#building-a-python-package-from-scratch">Building a Python package from scratch</a>
+  <ul class="collapse">
+  <li><a href="#source-code-development" id="toc-source-code-development" class="nav-link" data-scroll-target="#source-code-development">Source Code Development</a></li>
+  <li><a href="#package-structure" id="toc-package-structure" class="nav-link" data-scroll-target="#package-structure">Package structure</a></li>
+  <li><a href="#coockiecutter-template" id="toc-coockiecutter-template" class="nav-link" data-scroll-target="#coockiecutter-template"><code>coockiecutter</code> template</a></li>
+  </ul></li>
+  <li><a href="#git-hub-repository" id="toc-git-hub-repository" class="nav-link" data-scroll-target="#git-hub-repository">Git Hub repository</a></li>
+  <li><a href="#usage-documentation" id="toc-usage-documentation" class="nav-link" data-scroll-target="#usage-documentation">Usage Documentation</a></li>
   </ul>
 </nav>
     </div>
@@ -187,7 +228,54 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="building-a-python-package-from-scratch" class="level2">
 <h2 class="anchored" data-anchor-id="building-a-python-package-from-scratch">Building a Python package from scratch</h2>
-<p>Through this guide, I’ll be utilizing the <a href="https://pypi.org/project/autopredictor/">autopredictor</a> package, a project in which I was a part of the collaborative team.</p>
+<p>Through this guide, I’ll be guide you through the process of creating a Python package from the ground up, using the <a href="https://pypi.org/project/autopredictor/">autopredictor</a> package. As a contributor to the collborative team behind this project, our goal is to simplify the repetitive task of regression model selection and comparision within the machine learning workflow.</p>
+<p>The <code>autopredictor</code> package accelerates the exploration of eight regression models by evaluating them with default settings across four socring metrics. This approach allows users to quickly grasp the performance of each model. <code>autopredictor</code> caters to both beginners by eliminating the need for complicated model arguments and to experts by providing baseline results. You can find the source code of this package <a href="#git-hub-repository">here</a> and the vingette documentation <a href="#usage-documentation">here</a>.</p>
+<section id="source-code-development" class="level3">
+<h3 class="anchored" data-anchor-id="source-code-development">Source Code Development</h3>
+<p>Before getting into the intricacies of package creationg, it is essential to develop the code we intend to transform into a package. This initial step aids in organizing the code into distinct functions, forming the foundation for the subsequent packaging process. In this context, we refer to the core source code equivalent to those found under the <code>src/autopredictor</code> folder in this package repository. Once you have this code prepared, we can seamlessly process to establish the structure of our package.</p>
+</section>
+<section id="package-structure" class="level3">
+<h3 class="anchored" data-anchor-id="package-structure">Package structure</h3>
+<p>A python package conventionally adheres to a specific structure, emphasizing the advantages of modularity and simplicity. The structure for the <code>autopredictor</code> package is outlined below, with files neatly categorized into three main groups:</p>
+<ol type="1">
+<li>Package documentation:</li>
+</ol>
+<ul>
+<li><code>README.md</code>: Provides essentioal information and instructions for users, typically a summary of what the package achieves.</li>
+<li><code>docs/</code>: Contains additinal documentation files or folder for example vingette.</li>
+<li><code>pyproject.toml</code>: Instruction on how to build and install the package on a computer.</li>
+</ul>
+<ol start="2" type="1">
+<li>Package source code:</li>
+</ol>
+<ul>
+<li><code>__init__.py</code>: marks the directory as a Python package.</li>
+<li>Module files (<code>.py</code>): Houeses the core functinoalities, classes, and utilities.</li>
+</ul>
+<ol start="3" type="1">
+<li>Package tests</li>
+</ol>
+<ul>
+<li><code>test/</code>: Contains files for testing the package, ensuring functinality and realiability.</li>
+</ul>
+<section id="checkpoint" class="level4">
+<h4 class="anchored" data-anchor-id="checkpoint">Checkpoint:</h4>
+<p>Make sure that you have installed the necessary tools, namely <code>cookiecutter</code> and <code>poetry</code>, as these will be integral to the package-building process in this tutorial. Follow the <a href="https://python-poetry.org/docs/">Poetry installation instructions</a> for the <code>poetry</code> package. For <code>cookiecutter</code>, execute the following command in your terminal:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> conda-forge cookiecutter</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="coockiecutter-template" class="level3">
+<h3 class="anchored" data-anchor-id="coockiecutter-template"><code>coockiecutter</code> template</h3>
+<p>One easy way to set up the structure is through leveraging the <code>cookiecutter</code> tool. <code>cookiecutter</code> is a easy-to-use tool for populating a directory structure from a pre-made template.</p>
+</section>
+</section>
+<section id="git-hub-repository" class="level2">
+<h2 class="anchored" data-anchor-id="git-hub-repository">Git Hub repository</h2>
+<p>Please find the source code repository <a href="https://github.com/UBC-MDS/autopredictor">here</a>.</p>
+</section>
+<section id="usage-documentation" class="level2">
+<h2 class="anchored" data-anchor-id="usage-documentation">Usage Documentation</h2>
+<p>Please find the vingette documentation for <code>autopredictor</code>‘s usage example and the functions’ descriptions <a href="https://autopredictor.readthedocs.io/en/latest/?badge=latest">here</a>.</p>
 
 
 </section>
