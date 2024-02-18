@@ -197,8 +197,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#source-code-development" id="toc-source-code-development" class="nav-link" data-scroll-target="#source-code-development">Source Code Development</a></li>
   <li><a href="#package-structure" id="toc-package-structure" class="nav-link" data-scroll-target="#package-structure">Package structure</a></li>
-  <li><a href="#coockiecutter-template" id="toc-coockiecutter-template" class="nav-link" data-scroll-target="#coockiecutter-template"><code>coockiecutter</code> template</a></li>
+  <li><a href="#cookiecutter-template" id="toc-cookiecutter-template" class="nav-link" data-scroll-target="#cookiecutter-template"><code>cookiecutter</code> template</a></li>
+  <li><a href="#setting-up-remote-version-control" id="toc-setting-up-remote-version-control" class="nav-link" data-scroll-target="#setting-up-remote-version-control">Setting up remote version control</a></li>
+  <li><a href="#integrating-the-developed-source-code-into-the-package-directory" id="toc-integrating-the-developed-source-code-into-the-package-directory" class="nav-link" data-scroll-target="#integrating-the-developed-source-code-into-the-package-directory">Integrating the Developed source code into the Package Directory</a></li>
   </ul></li>
+  <li><a href="#installing-your-package" id="toc-installing-your-package" class="nav-link" data-scroll-target="#installing-your-package">Installing your package</a>
+  <ul class="collapse">
+  <li><a href="#adding-dependencies-to-your-package" id="toc-adding-dependencies-to-your-package" class="nav-link" data-scroll-target="#adding-dependencies-to-your-package">Adding dependencies to your package</a></li>
+  </ul></li>
+  <li><a href="#testing-code-coverage-and-documentation" id="toc-testing-code-coverage-and-documentation" class="nav-link" data-scroll-target="#testing-code-coverage-and-documentation">Testing, Code Coverage, and Documentation</a></li>
+  <li><a href="#building-and-publishing-your-package-on-pypi" id="toc-building-and-publishing-your-package-on-pypi" class="nav-link" data-scroll-target="#building-and-publishing-your-package-on-pypi">Building and publishing your package on PyPI</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   <li><a href="#git-hub-repository" id="toc-git-hub-repository" class="nav-link" data-scroll-target="#git-hub-repository">Git Hub repository</a></li>
   <li><a href="#usage-documentation" id="toc-usage-documentation" class="nav-link" data-scroll-target="#usage-documentation">Usage Documentation</a></li>
   </ul>
@@ -212,15 +221,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>Welcome to the world of Python packages! If you’ve embarked on your coding journey using the Phyton language, chances are you’ve encountered Python packages. Some widely-used examples are numpy, pandas, and scikit-learn for machine learning models. In this tutorial, we’ll delve into the process of crafting your own Python package and publishing it on the Python Package Index(<a href="https://pypi.org/">PyPI</a>), a platform designed for hosting python packages. This enables others to seamlessly leverage your work with a simple import statement.</p>
-<p>Python pockages offer a structured and modular approach to organizing code, bundling related functionalities, classes, and resources. This results in a well-organized and scalable codebase, simplifying development, maintenance, and collboartion –essential tools for Python developers.</p>
+<p>Welcome to the world of Python packages! If you’ve embarked on your coding journey using the Pyton language, chances are you’ve encountered Python packages. Some widely-used examples are numpy, pandas, and scikit-learn for machine learning models. In this tutorial, we’ll delve into the process of crafting your own Python package and publishing it on the Python Package Index(<a href="https://pypi.org/">PyPI</a>), a platform designed for hosting python packages. This enables others to seamlessly leverage your work with a simple import statement.</p>
+<p>Python packages offer a structured and modular approach to organizing code, bundling related functionalities, classes, and resources. This results in a well-organized and scalable codebase, simplifying development, maintenance, and collaboartion –essential tools for Python developers.</p>
 <section id="why-use-python-packages" class="level3">
 <h3 class="anchored" data-anchor-id="why-use-python-packages">Why Use Python Packages:</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="preview.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Package</figcaption>
+</figure>
+</div>
 <ol type="1">
 <li>Modularity: Packages help break down complex projects into manageable and modular units, fostering a more organized code structure. This modularity also simplifies writing test cases targetting specific sections and functions.</li>
 <li>Reusability: Once written, packages can be reused across various projects, saving time and effort by leveraging existing code.</li>
 <li>Maintainanility: Packages facilitate easier maintenance and updates, allowing developers to focus on specific parts of a project without affecting the entire codebase.</li>
-<li>Dependency Management: Packages enable parallel development, where team members can work independently on different modules, promoting collboration and efficiency.</li>
+<li>Dependency Management: Packages enable parallel development, where team members can work independently on different modules, promoting collaboration and efficiency.</li>
 <li>Version Control: Packages support versioning, ensuring compatibility and making it easier to manage changes in a project over time.</li>
 </ol>
 <p>Understanding and harnessing the power of Python packages is a fundamental skill for any Python developer. So, let’s dive in and explore how to create, use, and benefit from these modula building blocks in your Python projects!</p>
@@ -228,7 +243,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="building-a-python-package-from-scratch" class="level2">
 <h2 class="anchored" data-anchor-id="building-a-python-package-from-scratch">Building a Python package from scratch</h2>
-<p>Through this guide, I’ll be guide you through the process of creating a Python package from the ground up, using the <a href="https://pypi.org/project/autopredictor/">autopredictor</a> package. As a contributor to the collborative team behind this project, our goal is to simplify the repetitive task of regression model selection and comparision within the machine learning workflow.</p>
+<p>Through this guide, I’ll be guide you through the process of creating a Python package from the ground up, using the <a href="https://pypi.org/project/autopredictor/">autopredictor</a> package. As a contributor to the collaborative team behind this project, our goal is to simplify the repetitive task of regression model selection and comparision within the machine learning workflow.</p>
 <p>The <code>autopredictor</code> package accelerates the exploration of eight regression models by evaluating them with default settings across four socring metrics. This approach allows users to quickly grasp the performance of each model. <code>autopredictor</code> caters to both beginners by eliminating the need for complicated model arguments and to experts by providing baseline results. You can find the source code of this package <a href="#git-hub-repository">here</a> and the vingette documentation <a href="#usage-documentation">here</a>.</p>
 <section id="source-code-development" class="level3">
 <h3 class="anchored" data-anchor-id="source-code-development">Source Code Development</h3>
@@ -264,10 +279,82 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> conda-forge cookiecutter</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
-<section id="coockiecutter-template" class="level3">
-<h3 class="anchored" data-anchor-id="coockiecutter-template"><code>coockiecutter</code> template</h3>
-<p>One easy way to set up the structure is through leveraging the <code>cookiecutter</code> tool. <code>cookiecutter</code> is a easy-to-use tool for populating a directory structure from a pre-made template.</p>
+<section id="cookiecutter-template" class="level3">
+<h3 class="anchored" data-anchor-id="cookiecutter-template"><code>cookiecutter</code> template</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="cookiecutter.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Cookiecutter</figcaption>
+</figure>
+</div>
+<p>One easy way to set up the structure is through leveraging the <code>cookiecutter</code> tool. <code>cookiecutter</code> is a easy-to-use tool for populating a directory structure from a pre-made template for different projects, including and not limited to creating python packages, R packages,and websites. I chose to use this specific <a href="https://py-pkgs-cookiecutter.readthedocs.io/en/latest/"><code>py-pkgs-cookiecutter</code></a> template that is tailored for creating Python package.</p>
+<p>To create a package directory structure using this template, execute the following command from the directory where you want to establish your package.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">cookiecutter</span> https://github.com/py-pkgs/py-pkgs-cookiecutter.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This command initiates a template and prompts you for information related to your package. Thesse details will be automatically incorporated into the respective files within the package. During this process, opt for <code>no</code> when prompted about ‘GitHub Actions’ as the focus here is solely on developing the package structure, not automation. The image below displays the responses provided during these prompts:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="cookiecutter_template.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">cookiecutter prompts’ response for autopredictor package</figcaption>
+</figure>
+</div>
+<p>After completing these prompts, you will find a newly created directory in your working directory named <code>autopredictor</code>.</p>
 </section>
+<section id="setting-up-remote-version-control" class="level3">
+<h3 class="anchored" data-anchor-id="setting-up-remote-version-control">Setting up remote version control</h3>
+<p>Now is an opportune moment to establish a GitHub repository for version control. Begin by creating a new repository under your preferred GitHub account or organization. Follow the instructions provided on GitHub to link it with the package directory you recently generated using <code>cookiecutter</code>. This integration will facilitate version tracking and collaborative development for your package.</p>
+</section>
+<section id="integrating-the-developed-source-code-into-the-package-directory" class="level3">
+<h3 class="anchored" data-anchor-id="integrating-the-developed-source-code-into-the-package-directory">Integrating the Developed source code into the Package Directory</h3>
+<p>Place all the developed source code within modules in the <code>src/autopredictor/</code> directory. Although the cookiecutter has automatically created a module named <code>autopredictor.py</code>, you have the flexibility to organize your functions under a single module or distribute them across multiple modules based on your preference.</p>
+</section>
+</section>
+<section id="installing-your-package" class="level2">
+<h2 class="anchored" data-anchor-id="installing-your-package">Installing your package</h2>
+<p>Several tools are available for delveloping installable Python packages, such as <code>poetry</code>, <code>flit</code>, and <code>setuptools</code>. In this tutorial, we will utilize <code>poetry</code>, a modern packaging tool that offers straightforward and efficient commands for developing, installing, and distributing Python packages.</p>
+<p>The central configuration file for a <code>poetry</code> managed package is the <code>pyproject.toml</code> file. This file contains all the metadata and installation instructions for the package. During the setup, cookiecutter has automatically generated a base <code>pyproject.toml</code> file, which is organized into four main sections:</p>
+<ul>
+<li><code>[tool.poetry]</code>: Defines the package metadata.</li>
+<li><code>[tool.poetry.dependencies]</code>: Lists of dependencies required for general users.</li>
+<li><code>[tool.poetry.group.dev-dependencies]</code>: Specifies dependencies required for developers.</li>
+<li><code>[build-system]</code>: Identifies the build tools required to construct the package.</li>
+</ul>
+<p>It is crucial to create a new virtual environment dedicated to your package to prevent potential conflicts. To establish a new virtual enviuronment with python, utilize the command <code>conda create --name autopredictor python=3.9 -y</code>. To acitvate the environment, execute the command <code>conda activate autopredictor</code>. This ensures a clean and isloated environment for your package installation. To install your package, run the command <code>poetry install</code> from the directory where the <code>pyrpoject.toml</code> file is located.</p>
+<section id="adding-dependencies-to-your-package" class="level3">
+<h3 class="anchored" data-anchor-id="adding-dependencies-to-your-package">Adding dependencies to your package</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="dependencies.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Dependencies Management</figcaption>
+</figure>
+</div>
+<p>If your package relies on additional dependencies, incorporating them into the <code>pyproject.toml</code> file with <code>poetry</code> is straightforward. You have two options: manual addition or utilizing commands.</p>
+<p>For instance, the <code>autopredictor</code> package utilizes <code>scikit-learn</code> as one of its dependencies. Use the command <code>poetry add scikit-learn</code> to effortlessly include this dependency in your environemnet.The scikit-learn entry will be automatically appended to the pyproject.toml file under the <code>[tool.poetry.dependencies]</code> section.</p>
+<p>If you prefer the manual approach, simply add <code>scikit-learn = "^1.3.2"</code> under the <code>[tool.poetry.dependencies]</code> section in the <code>pyproject.toml</code> file directly. This sets a version constraint, specifying that the package requires version <code>1.3.2</code> or any higher version of scikit-learn. <code>poetry</code> will automatically generates a <code>poetry.lock</code> file which serve as a recod of all the exact version of the dependencies used in a project during installation, removal, or updating of any dependency.</p>
+</section>
+</section>
+<section id="testing-code-coverage-and-documentation" class="level2">
+<h2 class="anchored" data-anchor-id="testing-code-coverage-and-documentation">Testing, Code Coverage, and Documentation</h2>
+<p>While we won’t delve into extensive details on these sub-topics, it is imperative to create robust test units for the functions in your package and achieve comprehensive code coverage. To integrate <code>pytest</code> for developing unit tests, execute the command <code>poetry add --group dev pytest pytest-cov</code>. This command automatically updates the <code>[tool.poetry.group.dev-dependencies]</code> section in the <code>pyproject.toml</code> file. Don’t forget to commit and push these changes to your repository.</p>
+<p>Crafting a well-documented example vignette is essential for users to comprehend how your package functions and troubleshoot effectively. This documentation not only enhances the usability of your package but also contributes to a more user-friendly and collaborative development environment.</p>
+</section>
+<section id="building-and-publishing-your-package-on-pypi" class="level2">
+<h2 class="anchored" data-anchor-id="building-and-publishing-your-package-on-pypi">Building and publishing your package on PyPI</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="PyPI.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">PyPI</figcaption>
+</figure>
+</div>
+<p>With all the components in place from the previous section, your package is now poised for building and publishing. Building entails creating a ‘distribution package,’ a unified archive file encompassing all the necessary files and information for package installation via tools like pip. Users can easily install your package using a command such as <code>pip install autopredictor</code>. Distribution packages can take the form of <code>sdists</code> or <code>wheels</code>.</p>
+<p>To generate your ‘distribution package,’ execute the command <code>poetry build</code> from your root package directory. This will generate a new directory named <code>dist/</code>. Users can install your package by accessing this distribution package.</p>
+<p>To further streamline the process, you can publish your distribution package on PyPI. Begin by signing up for a <a href="https://pypi.org/account/register/">PyPI account</a> and create a new API token for PyPI authentication. Add your API token to Poetry and publish your package using the following commands:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">poetry</span> config pypi-token.pypi your-api-token</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">poetry</span> publish <span class="at">--build</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>These steps simplify the distribution and accessibility of your package, making it readily available for the broader Python community.</p>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>Congratulations on reaching this milestone! By following this tutorial, you have successfully created, developed, and published your first Python package on PyPI. This achievement not only demonstrates your proficiency in package development but also opens up opportunities for collaboration, contribution, and sharing your work with the wider Python community. As you continue your journey in software development, the skills you’ve gained in packaging and distribution will undoubtedly prove valuable. Best of luck with your future projects, and feel free to explore more advanced features and practices in the dynamic world of Python packaging. Happy coding!</p>
 </section>
 <section id="git-hub-repository" class="level2">
 <h2 class="anchored" data-anchor-id="git-hub-repository">Git Hub repository</h2>
