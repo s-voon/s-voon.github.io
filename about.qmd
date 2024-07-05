@@ -2,5 +2,38 @@
 title: "About Me"
 ---
 
-Hello~ Welcome to this page about me. I am currently a MDS student in the cohort 8 .This page will be updated as I learn more interesting stuff in this program. 
+Welcome to my professional space! I am Sharon Voon, a dynamic and innovative Data Science graduate based in Vancouver, BC. I have a deep passion for tackling challenging problems and am dedicated to continuous learning and professional development.
+
+## Professional Summary
+With a Master of Data Science (MDS) degree from the University of British Columbia, I have a strong foundation in data processing, predictive modeling, and data visualization. My educational background also includes a Bachelor of Applied Science in Chemical and Biological Engineering, which I completed with high distinction and co-operative education.
+
+## Skills and Expertise
+- **Programming Languages**: Python, R, SQL
+- **Data Visualization**: Dash, ggplot, Matplotlib, Plotly, PowerBI, Shiny
+- **Statistical Modeling**: A/B Testing, Hypothesis Testing
+- **Machine Learning**: Regression, Classification, Clustering, Deep Learning (TensorFlow, PyTorch), Neural Networks, Recommendation Systems
+
+## Work Experience
+**Infosys Limited** (Jun 2022 – Jul 2023)
+
+As a Data Associate, I engineered a file storage web application using Angular, enhancing user-interface simplicity by 25% and bolstered application security by 65% through strategic architecture modifications. I also architected and deployed a MySQL database on Azure, restructured a monolithic application into microservices, and implemented load balancing for microservices, increasing system availability by 28% and reducing response times by 13%.
+
+**BC Research Inc** (Jan 2020 – Sep 2020)
+
+During my tenure as a Process Engineer Intern, I developed an Excel template to automate the calculation of Henry’s Law Coefficient, increasing efficiency by 30%. I led research and vendor coordination for equipment procurement, utilized ImageJ for image analysis, and documented and updated SOPs and P&ID based on equipment design, ensuring adherence to industry standards.
+
+## Technical Projects
+**Robotic Arm Vision Capstone Project** (May 2024 – Jun 2024)
+
+I employed computer vision algorithms utilizing zero-shot learning transformers and fine-tuned CNNs to enable robotic arms for precise object detection and dimensional measurement in a team of 4. We achieved 82% average code coverage through rigorous edge case testing and implemented automated testing frameworks. 
+
+**Vancouver Crime Tracker 2023 Dashboard** (Apr 2024)
+
+I developed an interactive dashboard using Dash to track and visualize 2023 crime data in Vancouver neighborhoods. The project involved creating comprehensive visualizations, including geolocated maps, trend lines, and bar charts, to communicate crime patterns effectively. I designed an intuitive, user-friendly interface and enhanced dashboard performance by 35% through efficient caching mechanisms.
+
+## Certifications
+- Google Data Analytics Specialization (May 2023)
+- AWS Cloud Quest: Cloud Practitioner (May 2023)
+- Microsoft certified: Azure Data FundamentalsDP-900 (Feb 2023)
+
 
