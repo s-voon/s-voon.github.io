@@ -6,7 +6,7 @@ author:
     url: https://s-voon.github.io/
     affiliation: Master of Data Science Student, UBC, 2023
 date: 02-11-2024
-categories: [Package]
+categories: [Package, CI/CD]
 citation: 
   url: https://s-voon.github.io/posts/autopredictor_package/
 image: preview.png
@@ -120,6 +120,39 @@ poetry config pypi-token.pypi your-api-token
 poetry publish --build
 ```
 These steps simplify the distribution and accessibility of your package, making it readily available for the broader Python community.
+
+## Continuous Integration and Continuous Deployment (CI/CD) for `autopredictor`
+
+In modern software development, CI/CD pipelines are crucial for ensuring that code changes are automatically tested, validated, and deployed. Implementing CI/CD for your Python package helps maintain high-quality code, streamline the development process, and minimize manual intervention during deployments. In the autopredictor project, we utilized GitHub Actions to set up a robust CI/CD pipeline that automates testing, coverage tracking, documentation building, and package deployment.
+
+### Setting up CI/CD with GitHub Actions
+GitHub Actions is a powerful automation platform that allows developers to define workflows for automating tasks such as testing and deployment. Here's an overview of how the CI/CD pipeline is configured for the autopredictor package:
+
+1. Continuous Integration (CI)
+The CI job is triggered whenever code is pushed to the repository or a pull request is opened. It ensures that the new changes are thoroughly tested and meet the project's quality standards.
+
+- **Set Up Python Environment:** The pipeline begins by setting up a Python environment using Python 3.9.
+- **Install Dependencies:** The code repository is checked out, and the necessary dependencies are installed using poetry.
+- **Run Tests with Pytest:** Automated tests are run using pytest, with coverage tracking enabled to ensure the codebase is well-tested.
+- **Upload Coverage to Codecov:** The coverage report is uploaded to Codecov, a tool for tracking and analyzing code coverage over time.
+- **Build Documentation:** The project documentation is built automatically to ensure it is always up to date.
+
+2. Continuous Deployment (CD)
+The CD job is responsible for deploying the package once the CI checks have passed. This job only runs when changes are pushed to the main branch, ensuring that only stable code is deployed.
+
+- **Prepare Release with Python Semantic Release:** This step automatically determines the next version number based on the commit history, generates release notes, and creates a Git tag.
+- **Publish to TestPyPI:** Before deploying to the official Python Package Index (PyPI), the package is first published to TestPyPI for validation.
+- **Test Installation from TestPyPI:** The package is then installed from TestPyPI to ensure it was published correctly and can be installed by users.
+- **Publish to PyPI:** If all the previous steps succeed, the package is published to PyPI, making it available to the broader Python community.
+- **Publish to GitHub Releases:** The package distributions are also uploaded to GitHub Releases, providing an additional source for users to download the package.
+
+### Benefits of CI/CD in `autopredictor`
+Implementing CI/CD in the autopredictor project brings several advantages:
+
+- **Automated Testing:** Ensures that all changes are tested automatically, reducing the risk of introducing bugs.
+- **Consistent Documentation:** Documentation is built and updated automatically, ensuring users always have access to the latest information.
+- **Streamlined Deployment:** The package is automatically published to PyPI and GitHub Releases upon passing all checks, reducing manual deployment efforts.
+- **Improved Code Quality:** Continuous code coverage tracking helps maintain a high level of test coverage, ensuring code quality over time.
 
 ## Conclusion
 Congratulations on reaching this milestone! By following this tutorial, you have successfully created, developed, and published your first Python package on PyPI. This achievement not only demonstrates your proficiency in package development but also opens up opportunities for collaboration, contribution, and sharing your work with the wider Python community. As you continue your journey in software development, the skills you've gained in packaging and distribution will undoubtedly prove valuable. Best of luck with your future projects, and feel free to explore more advanced features and practices in the dynamic world of Python packaging. Happy coding!
