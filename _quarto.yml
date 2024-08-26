@@ -5,15 +5,25 @@ project:
 website:
   title: "Introducing Myself"
   navbar:
-    left:
+    right:
       - href: index.qmd
         text: Home
       - about.qmd
       - posts.qmd
+    logo: imgs/favicon.png
+    logo-alt: SV
+    logo-href: index.qmd
+    tools:
+      - icon: github
+        href: https://github.com/s-voon
+  favicon: imgs/favicon.png
+  
 
 format:
   html:
-    theme: sketchy
+    theme: 
+      light: lux
+      dark: cyborg
     css: styles.css
     toc: true
 
