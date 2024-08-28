@@ -2,7 +2,7 @@
   {
     "objectID": "posts.html",
     "href": "posts.html",
-    "title": "Projects",
+    "title": "Blogs",
     "section": "",
     "text": "Autopredictor: Python Package\n\n\n\nPackage\n\n\nCI/CD\n\n\n\nBuilding a Python package: Utilizing cookiecutter template for its simplicity and ease of use\n\n\n\nSharon Voon\n\n\nFeb 11, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDiabetes Classification Model: Virtual Environment through Docker\n\n\n\nML Project\n\n\nVirtual Env\n\n\nContainerization\n\n\n\nBuilding a Diabetes Classification Model: Leveraging Docker for Efficient Environment Management.\n\n\n\nSharon Voon\n\n\nFeb 9, 2024\n\n\n\n\n\n\n\n\nNo matching items"
   },
@@ -91,18 +91,18 @@
     "text": "Background\n\n\n\n\nEducation\n\n\nMaster in Data Science\n\n\nB.A.Sc in Chemical and Biological Engineering\n\n\n\n\n\nExperience\n\n\n2+ Years\n\n\nData Associate"
   },
   {
-    "objectID": "index.html#skills-and-expertise",
-    "href": "index.html#skills-and-expertise",
+    "objectID": "index.html#data-science-toolkit",
+    "href": "index.html#data-science-toolkit",
     "title": "Sharon Voon",
-    "section": "Skills and Expertise",
-    "text": "Skills and Expertise\n\n\n\nProject 1\n\n\nProject 1\n\n\n\nProject 2\n\n\nProject 3\n\n\n\nProgramming Languages: Python, R, SQL\nData Visualization: Dash, ggplot, Matplotlib, Plotly, PowerBI, Shiny\nStatistical Modeling: A/B Testing, Hypothesis Testing\nMachine Learning: Regression, Classification, Clustering, Deep Learning (TensorFlow, PyTorch), Neural Networks, Recommendation Systems"
+    "section": "Data Science Toolkit",
+    "text": "Data Science Toolkit\n\nProgramming Languages: Python, R, SQL\nData Visualization: Dash, ggplot, Matplotlib, Plotly, PowerBI, Shiny\nStatistical Modeling: A/B Testing, Hypothesis Testing\nMachine Learning: Regression, Classification, Clustering, Deep Learning Neural Networks, Recommendation Systems\nSoftware and Packages: Pandas, PyTorch, TensorFlow, Docker"
   },
   {
-    "objectID": "index.html#work-experience",
-    "href": "index.html#work-experience",
+    "objectID": "index.html#areas-of-interest",
+    "href": "index.html#areas-of-interest",
     "title": "Sharon Voon",
-    "section": "Work Experience",
-    "text": "Work Experience\nInfosys Limited (Jun 2022 – Jul 2023)\nAs a Data Associate, I engineered a file storage web application using Angular, enhancing user-interface simplicity by 25% and bolstered application security by 65% through strategic architecture modifications. I also architected and deployed a MySQL database on Azure, restructured a monolithic application into microservices, and implemented load balancing for microservices, increasing system availability by 28% and reducing response times by 13%.\nBC Research Inc (Jan 2020 – Sep 2020)\nDuring my tenure as a Process Engineer Intern, I developed an Excel template to automate the calculation of Henry’s Law Coefficient, increasing efficiency by 30%. I led research and vendor coordination for equipment procurement, utilized ImageJ for image analysis, and documented and updated SOPs and P&ID based on equipment design, ensuring adherence to industry standards."
+    "section": "Areas of Interest",
+    "text": "Areas of Interest\n\n\n\n\nMachine Learning\n\n\nUtilizes advanced algorithms to solve complex problems and predict outcomes from data.\n\n\n\n\n\nData Analytics\n\n\nAnalyzes data to identify trends and insights, transforming raw data into actionable recommendations.\n\n\n\n\n\nData Visualization\n\n\nCreates visual representations of data to make complex information easily understandable.\n\n\n\n\n\nData Storage\n\n\nManages and organizes data efficiently, ensuring easy access and reliable storage.\n\n\n\n\n\nStatistical Analysis\n\n\nApplies statistical methods to test hypotheses and evaluate data-driven decisions.\n\n\n\n\n\nCloud Compute\n\n\nLeverages cloud services to scale applications and streamline development processes."
   },
   {
     "objectID": "index.html#technical-projects",
@@ -194,19 +194,5 @@
     "title": "Diabetes Classification Model: Virtual Environment through Docker",
     "section": "Diabetes model Report",
     "text": "Diabetes model Report\nAnalysis Report"
-  },
-  {
-    "objectID": "index.html#areas-of-interest",
-    "href": "index.html#areas-of-interest",
-    "title": "Sharon Voon",
-    "section": "Areas of Interest",
-    "text": "Areas of Interest\n\n\n\n\nMachine Learning\n\n\nUtilizes advanced algorithms to solve complex problems and predict outcomes from data.\n\n\n\n\n\nData Analytics\n\n\nAnalyzes data to identify trends and insights, transforming raw data into actionable recommendations.\n\n\n\n\n\nData Visualization\n\n\nCreates visual representations of data to make complex information easily understandable.\n\n\n\n\n\nData Storage\n\n\nManages and organizes data efficiently, ensuring easy access and reliable storage.\n\n\n\n\n\nStatistical Analysis\n\n\nApplies statistical methods to test hypotheses and evaluate data-driven decisions.\n\n\n\n\n\nCloud Compute\n\n\nLeverages cloud services to scale applications and streamline development processes."
-  },
-  {
-    "objectID": "index.html#data-science-toolkit",
-    "href": "index.html#data-science-toolkit",
-    "title": "Sharon Voon",
-    "section": "Data Science Toolkit",
-    "text": "Data Science Toolkit\n\nProgramming Languages: Python, R, SQL\nData Visualization: Dash, ggplot, Matplotlib, Plotly, PowerBI, Shiny\nStatistical Modeling: A/B Testing, Hypothesis Testing\nMachine Learning: Regression, Classification, Clustering, Deep Learning Neural Networks, Recommendation Systems\nSoftware and Packages: Pandas, PyTorch, TensorFlow, Docker"
   }
 ]

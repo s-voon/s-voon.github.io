@@ -1,5 +1,5 @@
 ---
-title: "Projects"
+title: "Blogs"
 listing: 
   contents: posts 
   type: grid 
