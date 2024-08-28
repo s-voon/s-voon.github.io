@@ -1,1 +1,134 @@
-/* css styles */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* Single column layout */
+    gap: 2rem; /* Space between grid items */
+    max-width: 1200px; /* Optional: Limit the width */
+    margin: 20px auto; /* Center the grid container */
+    text-align: center; /* Center-align text inside grid items */
+  }
+
+@media (max-width: 900px) {
+.grid-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for smaller screens */
+}
+}
+
+@media (max-width: 600px) {
+.grid-container {
+    grid-template-columns: 1fr; /* Single column for very small screens */
+}
+} 
+  
+.grid-item {
+    background-color: #ffffff;
+    /* border: 2px solid black; Ensure border is visible */
+    padding: 1rem;
+    border-radius: 25px;
+    display: flex; /* Use flexbox for centering */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+  }
+
+.bold {
+    font-weight: bolder;
+    font-size: 1.5em;
+    margin: 10px auto;
+}
+
+.icon {
+    width: 50px; /* Adjust size as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 0.5rem; /* Space between icon and text */
+    vertical-align: middle; /* Align icon with text */
+  }
+
+/* .card {
+  width: 24rem;
+  height: 36rem;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  color: rgb(240, 240, 240);
+  box-shadow: 0 10px 30px 5px rgba(0, 0, 0, 0.2);
+
+  img {
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.9;
+    transition: opacity .2s ease-out;
+  }
+
+  h2 {
+    position: absolute;
+    inset: auto auto 30px 30px;
+    margin: 0;
+    transition: inset .3s .3s ease-out;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: normal;
+    text-transform: uppercase;
+  }
+  
+  p, a {
+    position: absolute;
+    opacity: 0;
+    max-width: 80%;
+    transition: opacity .3s ease-out;
+  }
+  
+  p{
+    inset: auto auto 80px 30px;
+  }
+  
+  a {
+    width: auto;
+    inset: auto auto 40px 30px;
+    color: inherit;
+    text-decoration: none;
+  }  
+  
+  &:hover h2 {
+    inset: auto auto 220px 30px;
+    transition: inset .3s ease-out;
+  }
+  
+  &:hover p, &:hover a {
+    opacity: 1;
+    transition: opacity .5s .1s ease-in;
+  }
+  
+  &:hover img {
+    transition: opacity .3s ease-in;
+    opacity: 1;
+  }
+
+}
+
+.card a.button {
+  position: absolute;
+  bottom: 20px; /* Adjust this value to move the button lower */
+  left: 30px;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  transition: background-color 0.3s ease, opacity .3s ease-out;
+  white-space: nowrap;
+  opacity: 0;
+}
+
+.card:hover a.button {
+  opacity: 1;
+  background-color: #0056b3;
+  transition: background-color 0.3s ease, opacity .5s .1s ease-in;
+} */

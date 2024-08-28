@@ -6,9 +6,10 @@ website:
   title: "Introducing Myself"
   navbar:
     right:
-      - href: index.qmd
-        text: Home
-      - about.qmd
+      - text: Home
+        href: index.qmd
+      - text: About Me
+        href: "#background"
       - posts.qmd
     logo: imgs/favicon.png
     logo-alt: SV
@@ -16,16 +17,26 @@ website:
     tools:
       - icon: github
         href: https://github.com/s-voon
+      - icon: linkedin
+        href: https://www.linkedin.com/in/sharonvoon/ 
   favicon: imgs/favicon.png
-  
+  page-footer:
+    border: True
+    left: "Copyright 2024, Sharon Voon"
+    right:
+      - icon: github
+        href: https://github.com/s-voon
+      - icon: linkedin
+        href: https://www.linkedin.com/in/sharonvoon/ 
 
 format:
   html:
+    page-layout: full
     theme: 
       light: lux
       dark: cyborg
-    css: styles.css
     toc: true
+    css: styles.css
 
 
 

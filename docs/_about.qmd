@@ -1,0 +1,73 @@
+## Background
+<div class="grid-container">
+  <div class="grid-item">
+  <img src="imgs/icons8-education-100.png" alt="School Icon" class="icon">
+  <div class="bold">Education</div>
+  <div>Master in Data Science</div>
+  <div>B.A.Sc in Chemical and Biological Engineering</div>
+  </div>
+  <div class="grid-item">
+  <img src="imgs/icons8-work-100.png" alt="Work Icon" class="icon">
+  <div class="bold">Experience</div>
+  <div style="font-size: 1.2em;">2+ Years</div>
+  <div>Data Associate</div>
+  </div>
+</div>
+
+## Data Science Toolkit
+
+- Programming Languages: Python, R, SQL
+- Data Visualization: Dash, ggplot, Matplotlib, Plotly, PowerBI, Shiny
+- Statistical Modeling: A/B Testing, Hypothesis Testing
+- Machine Learning: Regression, Classification, Clustering, Deep Learning Neural Networks, Recommendation Systems
+- Software and Packages: Pandas, PyTorch, TensorFlow, Docker 
+
+## Areas of Interest
+<div class="grid-container">
+  <div class="grid-item">
+  <img src="imgs/icons8-machine-learning-53.png" alt="ML Icon" class="icon">
+  <div class="bold">Machine Learning</div>
+  <div>Utilizes advanced algorithms to solve complex problems and predict outcomes from data.</div>
+  </div>
+  <div class="grid-item">
+  <img src="imgs/icons8-analytics-48.png" alt="Data Analytics Icon" class="icon">
+  <div class="bold">Data Analytics</div>
+  <div>Analyzes data to identify trends and insights, transforming raw data into actionable recommendations.</div>
+  </div>
+  <div class="grid-item">
+  <img src="imgs/icons8-data-visualization-66.png" alt="Data Visualization Icon" class="icon">
+  <div class="bold">Data Visualization</div>
+  <div>Creates visual representations of data to make complex information easily understandable.</div>
+  </div>
+  <div class="grid-item">
+  <img src="imgs/icons8-database-100.png" alt="Database Icon" class="icon">
+  <div class="bold">Data Storage</div>
+  <div>Manages and organizes data efficiently, ensuring easy access and reliable storage.</div>
+  </div>
+  <div class="grid-item">
+  <img src="imgs/icons8-analysis-100.png" alt="Statistical Analysis Icon" class="icon">
+  <div class="bold">Statistical Analysis</div>
+  <div>Applies statistical methods to test hypotheses and evaluate data-driven decisions.</div>
+  </div>
+  <div class="grid-item">
+  <img src="imgs/icons8-cloud-development-100.png" alt="Cloud Compute Icon" class="icon">
+  <div class="bold">Cloud Compute</div>
+  <div>Leverages cloud services to scale applications and streamline development processes.</div>
+  </div>
+</div>
+
+## Technical Projects
+**Robotic Arm Vision Capstone Project** (May 2024 – Jun 2024)
+
+I employed computer vision algorithms utilizing zero-shot learning transformers and fine-tuned CNNs to enable robotic arms for precise object detection and dimensional measurement in a team of 4. We achieved 82% average code coverage through rigorous edge case testing and implemented automated testing frameworks. 
+
+**Vancouver Crime Tracker 2023 Dashboard** (Apr 2024)
+
+I developed an interactive dashboard using Dash to track and visualize 2023 crime data in Vancouver neighborhoods. The project involved creating comprehensive visualizations, including geolocated maps, trend lines, and bar charts, to communicate crime patterns effectively. I designed an intuitive, user-friendly interface and enhanced dashboard performance by 35% through efficient caching mechanisms.
+
+## Certifications
+- Google Data Analytics Specialization (May 2023)
+- AWS Cloud Quest: Cloud Practitioner (May 2023)
+- Microsoft certified: Azure Data FundamentalsDP-900 (Feb 2023)
+
+
