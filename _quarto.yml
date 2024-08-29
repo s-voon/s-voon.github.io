@@ -3,14 +3,15 @@ project:
   output-dir: docs
 
 website:
-  title: "Introducing Myself"
+  title: "Sharon Voon"
+  back-to-top-navigation: true
   navbar:
     right:
       - text: Home
         href: index.qmd
       - text: About Me
         href: "#background"
-      - posts.qmd
+      - blogs.qmd
     logo: imgs/favicon.png
     logo-alt: SV
     logo-href: index.qmd

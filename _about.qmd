@@ -20,7 +20,7 @@
 - Data Visualization: Dash, ggplot, Matplotlib, Plotly, PowerBI, Shiny
 - Statistical Modeling: A/B Testing, Hypothesis Testing
 - Machine Learning: Regression, Classification, Clustering, Deep Learning Neural Networks, Recommendation Systems
-- Software and Packages: Pandas, PyTorch, TensorFlow, Docker 
+- Software and Packages: Pandas, PyTorch, TensorFlow, Docker, Quarto, Git 
 
 ## Areas of Interest
 <div class="grid-container">
@@ -57,26 +57,94 @@
 </div>
 
 ## Technical Projects
-<!-- <div class="card">
-<img src="https://images.unsplash.com/photo-1656618020911-1c7a937175fd?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NTc1MzQyNTE&ixlib=rb-1.2.1&q=80" alt="">
-<div class="card-content">
-  <h2>Card Heading</h2>
-  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit...</p>
-  <a href="#" class="button">Find out more</a>
+<div class="grid-card">
+  <article class="card">
+  <img
+    class="card__background"
+    src="imgs/cv_cover.jpg"
+    alt="Photo of a robotic arm in a bottle assembly factory"
+  />
+  <div class="card__content | flow">
+  <div class="card__content--container | flow">
+  <h2 class="card__title">Machine Learning</h2>
+  <p class="card__description">
+        Robotic Arm Vision Recognition
+  </p>
+  <p class="card__description">
+        Employed computer vision algorithms through utilizing zero-shot learning transforrmers and fine-tuned MRCNN to enable robotic arms for precise object detection and dimensional measuerment.
+  </p>
+  </div>
+  <a href="#" class="card__button">Read more<a>
+  </div>
+  </article>
+
+  <article class="card">
+  <img
+    class="card__background"
+    src="imgs/crime_tracker.gif"
+    alt="Animated GIF of the crime tracker dashboard"
+  />
+  <div class="card__content | flow">
+  <div class="card__content--container | flow">
+  <h2 class="card__title">Dashboard</h2>
+  <p class="card__description">
+        Vancouver Crime Tracker 2023 Dashboard
+  </p>
+  <p class="card__description">
+        An interactice dashboad using Dash to  visualize 2023 crime data in Vancouver neighborhoods though geolocated maps, trend lines, and bar charts.
+  </p>
+  </div>
+  <a href="https://dsci-532-2024-4-crime-tracker.onrender.com/" class="card__button">Demo<a>
+  </div>
+  </article>
+
+  <article class="card">
+  <img
+    class="card__background"
+    src="imgs/autoperdictor_logo.png"
+    alt="Logo of autoperdictor package"
+  />
+  <div class="card__content | flow">
+  <div class="card__content--container | flow">
+  <h2 class="card__title">Python Package</h2>
+  <p class="card__description">
+        autopredictor
+  </p>
+  <p class="card__description">
+        Autopredictor simplifies machine learning model selection for regression tasks. This Python package provides an intuitive approach, minimizing coding for model exploration.
+  </p>
+  </div> 
+  <div class="card__buttons">
+  <a href="https://github.com/UBC-MDS/autopredictor" class="card__button">Github<a>
+  <a href="https://autopredictor.readthedocs.io/en/latest/example.html" class="card__button">Tutorial<a>
+  </div>
+  </div>
+  </article>
 </div>
-</div> -->
 
-**Robotic Arm Vision Capstone Project** (May 2024 – Jun 2024)
-
-I employed computer vision algorithms utilizing zero-shot learning transformers and fine-tuned CNNs to enable robotic arms for precise object detection and dimensional measurement in a team of 4. We achieved 82% average code coverage through rigorous edge case testing and implemented automated testing frameworks. 
-
-**Vancouver Crime Tracker 2023 Dashboard** (Apr 2024)
-
-I developed an interactive dashboard using Dash to track and visualize 2023 crime data in Vancouver neighborhoods. The project involved creating comprehensive visualizations, including geolocated maps, trend lines, and bar charts, to communicate crime patterns effectively. I designed an intuitive, user-friendly interface and enhanced dashboard performance by 35% through efficient caching mechanisms.
+<div class="centered-button">
+  <a href="https://s-voon.github.io/blogs.html" class="circle-button">
+    <img src="imgs/icons8-plus-50.png" alt="Button Icon">
+  </a>
+</div>
 
 ## Certifications
 - Google Data Analytics Specialization (May 2023)
 - AWS Cloud Quest: Cloud Practitioner (May 2023)
 - Microsoft certified: Azure Data FundamentalsDP-900 (Feb 2023)
 
-
+## Contact Me
+<div class="contact-info">
+  <div class="contact-item">
+  <img src="imgs/icons8-email-100.png" alt="Email Icon" class="icon-contact">
+  <a href="mailto:svoon12@gmail.com">svoon12@gmail.com</a>
+  </div>
+  <div class="contact-item">
+  <img src="imgs/icons8-github-24.png" alt="GitHub Icon" class="icon-contact">
+  <a href="https://github.com/s-voon" target="_blank">s-voon</a>
+  </div>
+  <div class="contact-item">
+  <img src="imgs/icons8-linkedin-50.png" alt="LinkedIn Icon" class="icon-contact">
+  <a href="https://www.linkedin.com/in/sharonvoon/" target="_blank">Sharon Voon</a>
+  </div>
+</div>
