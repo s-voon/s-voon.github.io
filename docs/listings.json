@@ -1,9 +1,9 @@
 [
   {
-    "listing": "/posts.html",
+    "listing": "/blogs.html",
     "items": [
-      "/posts/autopredictor_package/index.html",
-      "/posts/diabetes_classification/index.html"
+      "/blogs/autopredictor_package/index.html",
+      "/blogs/diabetes_classification/index.html"
     ]
   }
 ]

@@ -8,7 +8,7 @@ author:
 date: 02-11-2024
 categories: [Package, CI/CD]
 citation: 
-  url: https://s-voon.github.io/posts/autopredictor_package/
+  url: https://s-voon.github.io/blogs/autopredictor_package/
 image: preview.png
 draft: false 
 ---
