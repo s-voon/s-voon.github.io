@@ -13,6 +13,12 @@ image: preview.png
 draft: false 
 ---
 
+<style>
+h1.title {
+    color: white;
+}
+</style>
+
 ## Introduction
 
 Embark on a journey with me as I share insights into creating a predictive diabetes classification model. Learn how to streamline your workflow by hosting a virtual environment using Docker, ensuring seamless software dependency management. Drawing from a group project during my MDS studies, where we explored decision tree and kNN algorithms with the 2015 BFRSS dataset, I'll guide you through the  process of developing scripts and analysis pipeline for non-interactive data analysis. While I won't delve into the projects findings here, you can explore the complete [source code](#github-source-code) and report [here](#diabetes-model-report).
