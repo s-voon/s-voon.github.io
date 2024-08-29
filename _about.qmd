@@ -94,7 +94,10 @@
         An interactice dashboad using Dash to  visualize 2023 crime data in Vancouver neighborhoods though geolocated maps, trend lines, and bar charts.
   </p>
   </div>
+  <div class="card__buttons">
+  <a href="https://github.com/UBC-MDS/DSCI-532_2024_4_crime-tracker" class="card__button">Github<a>
   <a href="https://dsci-532-2024-4-crime-tracker.onrender.com/" class="card__button">Demo<a>
+  </div>
   </div>
   </article>
 

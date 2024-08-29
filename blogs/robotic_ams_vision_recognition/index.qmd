@@ -1,0 +1,28 @@
+---
+title: "Robotic Arm Vision Recognition"
+description: "An end-to-end data pipeline for instance segmentation and classification"
+author:
+  - name: Sharon Voon
+    url: https://s-voon.github.io/
+    affiliation: Master of Data Science Student, UBC, 2024
+date: 08-28-2024
+categories: [ML, Data Pipeline ]
+citation: 
+  url: https://s-voon.github.io/blogs/robotic_arms_vision_recognition/
+image: preview.png
+draft: true
+---
+
+## Introduction
+In the ever-evolving field of computer vision, the integration of cutting-edge technologies can transform the capabilities of robotic systems. My recent capstone project, "Robotic Arm Vision Recognition," explored this transformative potential by leveraging Mask R-CNN, Segment Anything Model (SAM), and ClipSeg to enhance robotic arm vision recognition. This project not only pushed the boundaries of what robotic arms can achieve but also showcased the power of advanced computer vision techniques in practical applications.
+ 
+In this project, we aim to enhance the operational efficiency of robotic arms on a bottle production line within a factory setting. The project focuses on developing automated and precise vision recognition and dimension measurement technologies to accommodate a diverse range of bottle sizes and shapes in the assembly process, thus improving the production lines' adaptability, accuracy, and efficiency. This effort centers on two tasks: image segmentation and automatic measurement of bottle components, both essential for providing the robotic arms with accurate dimensions for precise manipulation during the assembly process.
+
+## Background
+In computer vision, **instance segmentation** is a task that involves detecting objects in an image and generating a pixel-level mask for each object, allowing for precise localization and differentiation between instances, even in overlapping scenarios. Mask segmentation focuses on creating these detailed masks, which are essential for applications like robotic vision, where accurate object localization is crucial.
+
+Mask R-CNN is a widely used model for instance segmentation. It extends Faster R-CNN by adding a branch that predicts segmentation masks for each detected object. The model works by generating region proposals, classifying objects within those regions, and then creating masks that outline each object’s shape, enabling precise segmentation.
+
+ClipSeg combines the strengths of CLIP (Contrastive Language–Image Pretraining) and segmentation, allowing the model to generate masks based on textual descriptions. This approach enables the model to understand and segment objects using natural language prompts, making it highly adaptable to various tasks.
+
+Segment Anything Model (SAM) is a versatile model designed to handle a wide range of segmentation tasks. SAM's architecture is optimized for scalability and adaptability, making it effective in segmenting diverse objects, even in complex environments, without extensive retraining.

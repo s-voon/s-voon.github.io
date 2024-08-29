@@ -32,7 +32,7 @@
     "href": "index.html#technical-projects",
     "title": "Sharon Voon",
     "section": "Technical Projects",
-    "text": "Technical Projects\n\n\n\n\n\n\nMachine Learning\n\n\nRobotic Arm Vision Recognition\n\n\nEmployed computer vision algorithms through utilizing zero-shot learning transforrmers and fine-tuned MRCNN to enable robotic arms for precise object detection and dimensional measuerment.\n\n\nRead more\n\n\n\n\n\n\n\nDashboard\n\n\nVancouver Crime Tracker 2023 Dashboard\n\n\nAn interactice dashboad using Dash to visualize 2023 crime data in Vancouver neighborhoods though geolocated maps, trend lines, and bar charts.\n\n\nDemo\n\n\n\n\n\n\n\nPython Package\n\n\nautopredictor\n\n\nAutopredictor simplifies machine learning model selection for regression tasks. This Python package provides an intuitive approach, minimizing coding for model exploration.\n\n\n\nGithub Tutorial"
+    "text": "Technical Projects\n\n\n\n\n\n\nMachine Learning\n\n\nRobotic Arm Vision Recognition\n\n\nEmployed computer vision algorithms through utilizing zero-shot learning transforrmers and fine-tuned MRCNN to enable robotic arms for precise object detection and dimensional measuerment.\n\n\nRead more\n\n\n\n\n\n\n\nDashboard\n\n\nVancouver Crime Tracker 2023 Dashboard\n\n\nAn interactice dashboad using Dash to visualize 2023 crime data in Vancouver neighborhoods though geolocated maps, trend lines, and bar charts.\n\n\n\nGithub Demo\n\n\n\n\n\n\n\n\nPython Package\n\n\nautopredictor\n\n\nAutopredictor simplifies machine learning model selection for regression tasks. This Python package provides an intuitive approach, minimizing coding for model exploration.\n\n\n\nGithub Tutorial"
   },
   {
     "objectID": "index.html#certifications",
