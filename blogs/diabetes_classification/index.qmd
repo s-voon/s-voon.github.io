@@ -8,7 +8,7 @@ author:
 date: 02-09-2024
 categories: [ML Project, Virtual Env, Containerization]
 citation: 
-  url: https://s-voon.github.io/posts/diabetes_classification/
+  url: https://s-voon.github.io/blogs/diabetes_classification/
 image: preview.png
 draft: false 
 ---

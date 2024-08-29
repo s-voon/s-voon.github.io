@@ -1,0 +1,31 @@
+---
+title: "Blogs"
+listing: 
+  contents: blogs
+  type: grid
+  sort: "title" 
+  categories: true 
+  max-description-length: 100
+  grid-item-border: false
+  grid-columns: 3
+  page-size: 9
+---
+
+<style>
+.quarto-grid-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.quarto-grid-item img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px; /* Space between image and title */
+}
+
+.quarto-grid-item-title {
+    margin-top: auto;
+    padding: 10px 0; /* Adjust padding to avoid overlap */
+    text-align: center;
+}
+</style>
