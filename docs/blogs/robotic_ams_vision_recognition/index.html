@@ -165,8 +165,20 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#background" id="toc-background" class="nav-link" data-scroll-target="#background">Background</a></li>
+  <li><a href="#problem-and-motivation" id="toc-problem-and-motivation" class="nav-link active" data-scroll-target="#problem-and-motivation">Problem and Motivation</a></li>
+  <li><a href="#project-impact-and-real-world-applications" id="toc-project-impact-and-real-world-applications" class="nav-link" data-scroll-target="#project-impact-and-real-world-applications">Project Impact and Real-World Applications</a></li>
+  <li><a href="#background-and-acknowledgement" id="toc-background-and-acknowledgement" class="nav-link" data-scroll-target="#background-and-acknowledgement">Background and Acknowledgement</a></li>
+  <li><a href="#theory-and-approach" id="toc-theory-and-approach" class="nav-link" data-scroll-target="#theory-and-approach">Theory and Approach</a>
+  <ul class="collapse">
+  <li><a href="#mask-r-cnn-precision-in-object-detection-and-segmentation" id="toc-mask-r-cnn-precision-in-object-detection-and-segmentation" class="nav-link" data-scroll-target="#mask-r-cnn-precision-in-object-detection-and-segmentation">Mask R-CNN: Precision in Object Detection and Segmentation</a></li>
+  <li><a href="#clipseg-sam-leveraging-advanced-segmentation-models" id="toc-clipseg-sam-leveraging-advanced-segmentation-models" class="nav-link" data-scroll-target="#clipseg-sam-leveraging-advanced-segmentation-models">CLIPSeg + SAM: Leveraging Advanced Segmentation Models</a></li>
+  <li><a href="#pixel-ratio-conversion-translating-pixels-to-real-world-dimensions" id="toc-pixel-ratio-conversion-translating-pixels-to-real-world-dimensions" class="nav-link" data-scroll-target="#pixel-ratio-conversion-translating-pixels-to-real-world-dimensions">Pixel Ratio Conversion: Translating Pixels to Real-World Dimensions</a></li>
+  </ul></li>
+  <li><a href="#implementation" id="toc-implementation" class="nav-link" data-scroll-target="#implementation">Implementation</a></li>
+  <li><a href="#a-comparative-analysis-mrcnn-vs-clipseg-sam" id="toc-a-comparative-analysis-mrcnn-vs-clipseg-sam" class="nav-link" data-scroll-target="#a-comparative-analysis-mrcnn-vs-clipseg-sam">A Comparative Analysis: MRCNN vs CLIPSeg + SAM</a></li>
+  <li><a href="#challenges-and-learnings" id="toc-challenges-and-learnings" class="nav-link" data-scroll-target="#challenges-and-learnings">Challenges and Learnings</a></li>
+  <li><a href="#future-work-and-opportunities-for-improvement" id="toc-future-work-and-opportunities-for-improvement" class="nav-link" data-scroll-target="#future-work-and-opportunities-for-improvement">Future Work and Opportunities for Improvement</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   </ul>
 </nav>
     </div>
@@ -176,17 +188,121 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>In the ever-evolving field of computer vision, the integration of cutting-edge technologies can transform the capabilities of robotic systems. My recent capstone project, “Robotic Arm Vision Recognition,” explored this transformative potential by leveraging Mask R-CNN, Segment Anything Model (SAM), and ClipSeg to enhance robotic arm vision recognition. This project not only pushed the boundaries of what robotic arms can achieve but also showcased the power of advanced computer vision techniques in practical applications.</p>
-<p>In this project, we aim to enhance the operational efficiency of robotic arms on a bottle production line within a factory setting. The project focuses on developing automated and precise vision recognition and dimension measurement technologies to accommodate a diverse range of bottle sizes and shapes in the assembly process, thus improving the production lines’ adaptability, accuracy, and efficiency. This effort centers on two tasks: image segmentation and automatic measurement of bottle components, both essential for providing the robotic arms with accurate dimensions for precise manipulation during the assembly process.</p>
+<style>
+h1.title {
+    color: white;
+}
+</style>
+<p>Ever wondered how a driverless car like Tesla navigates the world so seamlessly? The secret lies in computer vision—a technology that enables these cars to “see” their surroundings, identifying objects and understanding their exact locations. But this isn’t just limited to autonomous vehicles. Computer vision is transforming industries, making everyday tasks more efficient and precise.</p>
+<p>In partnership with <a href="https://analytika.ca/">Analytika</a>, my recent capstone project, “Robotic Arm Vision Recognition,” tapped into the incredible potential of computer vision to revolutionize robotic systems. By harnessing the power of cutting-edge models like Mask R-CNN, Segment Anything Model (SAM), and ClipSeg, we pushed the boundaries of what robotic arms can achieve in a real-world factory setting.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="cv_cover.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Robotic Arm in a bottle assembly factory</figcaption>
+</figure>
+</div>
+<section id="problem-and-motivation" class="level2">
+<h2 class="anchored" data-anchor-id="problem-and-motivation">Problem and Motivation</h2>
+<p>In modern manufacturing, especially on bottle production lines, efficiency and precision are paramount. The challenge? Traditional methods often fell short in accuracy, leading to increased waste and downtime. Typically, each assembly line is tailored to a specific bottle shape and size, requiring manual adjustments during turnover to accommodate different types. Our mission was clear: to develop an advanced vision recognition system that could handle this variability with precision and automation, thus improving the production lines’ adaptability, accuracy, and efficiency.</p>
 </section>
-<section id="background" class="level2">
-<h2 class="anchored" data-anchor-id="background">Background</h2>
-<p>In computer vision, <strong>instance segmentation</strong> is a task that involves detecting objects in an image and generating a pixel-level mask for each object, allowing for precise localization and differentiation between instances, even in overlapping scenarios. Mask segmentation focuses on creating these detailed masks, which are essential for applications like robotic vision, where accurate object localization is crucial.</p>
-<p>Mask R-CNN is a widely used model for instance segmentation. It extends Faster R-CNN by adding a branch that predicts segmentation masks for each detected object. The model works by generating region proposals, classifying objects within those regions, and then creating masks that outline each object’s shape, enabling precise segmentation.</p>
-<p>ClipSeg combines the strengths of CLIP (Contrastive Language–Image Pretraining) and segmentation, allowing the model to generate masks based on textual descriptions. This approach enables the model to understand and segment objects using natural language prompts, making it highly adaptable to various tasks.</p>
-<p>Segment Anything Model (SAM) is a versatile model designed to handle a wide range of segmentation tasks. SAM’s architecture is optimized for scalability and adaptability, making it effective in segmenting diverse objects, even in complex environments, without extensive retraining.</p>
+<section id="project-impact-and-real-world-applications" class="level2">
+<h2 class="anchored" data-anchor-id="project-impact-and-real-world-applications">Project Impact and Real-World Applications</h2>
+<p>The solution we developed had a tangible impact on the production process. By implementing advanced vision recognition and dimension measurement technologies, we reduced errors in assembly, improved overall efficiency, and allowed for quicker adaptation to new bottle designs. This not only cut down on waste but also optimized production speed, directly translating to cost savings for the factory.</p>
+<p>Beyond this specific application, the techniques we employed—particularly the integration of Mask R-CNN or SAM together with ClipSeg—can be applied to other industries. From automotive to consumer electronics, any field that relies on robotic precision can benefit from the advancements made in this project.</p>
+</section>
+<section id="background-and-acknowledgement" class="level2">
+<h2 class="anchored" data-anchor-id="background-and-acknowledgement">Background and Acknowledgement</h2>
+<p>Before we dive into the details and theory, I’d like to take a moment to acknowledge the incredible tools that made this project possible:</p>
+<ul>
+<li><strong>Matterport, Inc.</strong> for developing the Mask R-CNN model and making it so accessible. Their <a href="https://github.com/matterport/Mask_RCNN">repository</a> and <a href="https://engineering.matterport.com/splash-of-color-instance-segmentation-with-mask-r-cnn-and-tensorflow-7c761e238b46">tutorial</a> are great starting points for anyone interested in working with Mask R-CNN.</li>
+<li><strong>MetaAI</strong> for the Segment Anything Model (SAM). You can explore their work through their <a href="https://github.com/facebookresearch/segment-anything">repository</a> and even try out the model in action <a href="https://segment-anything.com/demo">here</a>.</li>
+<li><strong>Hugging Face</strong> for providing an insightful tutorial on CLIPSeg. If you’re curious about how to use this model, check out their tutorial <a href="https://huggingface.co/blog/clipseg-zero-shot">here</a>.</li>
+</ul>
+<p>n computer vision, <strong>image classification</strong> involves identifying and labeling the entire image with a single category. <strong>Object localization</strong> goes a step further by not only identifying the objects within an image but also pinpointing their locations using bounding boxes. <strong>Semantic segmentation</strong> assigns a class label to every pixel in an image, grouping pixels that belong to the same object or region but without distinguishing between multiple instances of the same object. <strong>Instance segmentation</strong> combines both tasks, distinguishing and segmenting each individual object instance within an image, even if they belong to the same class, providing the most detailed level of analysis. For our project, instance segmentation is crucial as it allows us to accurately identify and separate each bottle component, ensuring precise manipulation and measurement on the assembly line.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="jargon.jpeg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Overview of image classification, object localization, semantic segmentation, and instance segmentation visually.</figcaption>
+</figure>
+</div>
+</section>
+<section id="theory-and-approach" class="level2">
+<h2 class="anchored" data-anchor-id="theory-and-approach">Theory and Approach</h2>
+<section id="mask-r-cnn-precision-in-object-detection-and-segmentation" class="level3">
+<h3 class="anchored" data-anchor-id="mask-r-cnn-precision-in-object-detection-and-segmentation">Mask R-CNN: Precision in Object Detection and Segmentation</h3>
+<p>Mask R-CNN (MRCNN) excels in both object detection and generating precise segmentation masks, crucial for dimensional analysis. By leveraging a pre-trained ResNet101 backbone on the COCO dataset, we sped up training while enhancing accuracy. Data augmentation techniques, such as flips and rotations, helped prevent overfitting. Despite its strengths, MRCNN requires substantial labeled data, which can be labor-intensive. Given the specific needs of our project—detecting bottle components like pumps and stems—training and fine-tuning MRCNN proved to be the most effective approach. We used IoU and recall metrics to ensure high segmentation accuracy, directly impacting the precision of our dimensional measurements.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="mrcnn_theoy.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Mask R-CNN enhances Faster R-CNN by adding a mask prediction branch and using RoIAlign for precise pixel alignment. It decouples mask and class predictions, improving instance segmentation accuracy.</figcaption>
+</figure>
+</div>
+</section>
+<section id="clipseg-sam-leveraging-advanced-segmentation-models" class="level3">
+<h3 class="anchored" data-anchor-id="clipseg-sam-leveraging-advanced-segmentation-models">CLIPSeg + SAM: Leveraging Advanced Segmentation Models</h3>
+<p>We combined the strengths of CLIPSeg and SAM to achieve optimal segmentation. CLIPSeg, pre-trained on 400 million image-text pairs, allows for zero-shot image segmentation using text prompts, making it versatile. However, its lower resolution can result in blurred boundaries, less ideal for precise measurements. SAM, on the other hand, excels in high-precision segmentation with its extensive training on a diverse dataset of 11 million images. While SAM lacks text-prompt capabilities, it provides superior accuracy. By integrating CLIPSeg’s text-based identification with SAM’s precision, we achieved more accurate and flexible segmentation.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="clipseg_architecture.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">CLIPSeg combines a vision transformer with text prompts for zero-shot segmentation, enabling flexible and precise object identification by leveraging large-scale image-text pairs.</figcaption>
+</figure>
+</div>
+</section>
+<section id="pixel-ratio-conversion-translating-pixels-to-real-world-dimensions" class="level3">
+<h3 class="anchored" data-anchor-id="pixel-ratio-conversion-translating-pixels-to-real-world-dimensions">Pixel Ratio Conversion: Translating Pixels to Real-World Dimensions</h3>
+<p>To convert bounding box measurements into real-world dimensions, we used pixel ratio conversion equations. By establishing a pixel-to-actual-dimension ratio using the known diameter of a sticker, we could accurately translate the height and width of the components into centimeters, ensuring precise dimensional predictions crucial for quality control in the assembly process.</p>
+</section>
+</section>
+<section id="implementation" class="level2">
+<h2 class="anchored" data-anchor-id="implementation">Implementation</h2>
+<p>The implementation involved several key steps:</p>
+<p><strong>Data Collection and Processing:</strong> We gathered a diverse dataset of images containing various objects to train and validate the models. The dataset included images with different lighting conditions, backgrounds, and object orientations. Labelling was done using <a href="https://segments.ai/">Segments.ai</a>.</p>
+<p><strong>Model Training and Fine-Tuning:</strong> Mask R-CNN, SAM, and ClipSeg were trained and fine-tuned on the collected dataset. Each model was optimized to perform specific tasks—Mask R-CNN for object detection and segmentation, SAM for versatile segmentation, and ClipSeg for semantic understanding.</p>
+<p><strong>Measurement:</strong> Measure bottle components dimension using mathematical transformations which is essentially pixel-ratio-dimensions.</p>
+<p><strong>Evaluation:</strong> Assess model performance using metrics such as Intersection over Union (IoU) and recall. Evaluate dimension measurement performance using metrics such as percentage error.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="general_workflow.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Images with diverse conditions were labeled using Segments.ai and processed through two approaches: training and fine-tuning Mask R-CNN; and applying zero-shot segmentation with ClipSeg + SAM. Bottle component measurements were derived from pixel-to-dimension ratios, and model performance was evaluated using IoU, recall, and percentage error metrics.</figcaption>
+</figure>
+</div>
+</section>
+<section id="a-comparative-analysis-mrcnn-vs-clipseg-sam" class="level2">
+<h2 class="anchored" data-anchor-id="a-comparative-analysis-mrcnn-vs-clipseg-sam">A Comparative Analysis: MRCNN vs CLIPSeg + SAM</h2>
+<p>We used the Mean Average Percentage Error (MAPE) to evaluate the performance of MRCNN versus the CLIPSeg + SAM combination. CLIPSeg + SAM consistently outperformed MRCNN in predicting bottle dimensions, with lower percentage errors in height (2.35% vs.&nbsp;9.96%) and width (3.22% vs.&nbsp;12.2%). Despite some variability, CLIPSeg + SAM demonstrated superior accuracy overall. Improving image quality is expected to further enhance this combination’s precision, leading to even greater accuracy in future applications.</p>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="mask_rcnn_results.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Segmentation results from the fine-tuned Mask R-CNN model.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="clipseg_result.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">CLIP output (Left) to be cross-referenced with SAM’s outputs (small pictures to its right). Numbers below are the IoU scores</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="challenges-and-learnings" class="level2">
+<h2 class="anchored" data-anchor-id="challenges-and-learnings">Challenges and Learnings</h2>
+<p>The dataset size significantly impacted MRCNN’s performance. Expanding the dataset would likely improve the model’s generalization ability. Additionally, using higher-quality images with clear component boundaries could enhance segmentation accuracy. Incorporating a cropping step in the pre-processing pipeline might help focus the model on relevant areas, potentially improving performance. However, these enhancements were beyond the current project scope due to time and resource constraints.</p>
+</section>
+<section id="future-work-and-opportunities-for-improvement" class="level2">
+<h2 class="anchored" data-anchor-id="future-work-and-opportunities-for-improvement">Future Work and Opportunities for Improvement</h2>
+<p>Looking ahead, there are several opportunities to extend this work. Expanding the dataset, incorporating new models, or experimenting with different architectures could yield even better results. Furthermore, the integration of additional features like real-time processing or multi-view analysis could enhance the system’s capability and applicability across various industries.</p>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>The “Robotic Arm Vision Recognition” project showcased the transformative potential of advanced computer vision techniques in enhancing robotic systems. By integrating Mask R-CNN, Segment Anything Model (SAM), and CLIPSeg, we achieved significant improvements in object detection, segmentation, and classification. This project underscores the importance of leveraging state-of-the-art technologies to tackle complex challenges in computer vision and robotics.</p>
+<p>As technology continues to advance, integrating such innovative models will undoubtedly lead to even more capable and intelligent robotic systems. The insights gained from this project provide a solid foundation for future developments in robotic vision technology.</p>
 
 
 </section>

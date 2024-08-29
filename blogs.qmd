@@ -9,6 +9,7 @@ listing:
   grid-item-border: false
   grid-columns: 3
   page-size: 9
+  fields: [image, date, title, reading-time, description]
 ---
 
 <style>
