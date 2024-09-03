@@ -71,7 +71,7 @@
         Robotic Arm Vision Recognition
   </p>
   <p class="card__description">
-        Employed computer vision algorithms through utilizing zero-shot learning transforrmers and fine-tuned MRCNN to enable robotic arms for precise object detection and dimensional measuerment.
+        Employed computer vision algorithms through utilizing zero-shot learning transformers and fine-tuned MRCNN to enable robotic arms for precise object detection and dimensional measurement.
   </p>
   </div>
   <a href="https://s-voon.github.io/blogs/robotic_arms_vision_recognition/" class="card__button">Read more<a>
@@ -91,7 +91,7 @@
         Vancouver Crime Tracker 2023 Dashboard
   </p>
   <p class="card__description">
-        An interactice dashboad using Dash to  visualize 2023 crime data in Vancouver neighborhoods though geolocated maps, trend lines, and bar charts.
+        An interactive dashboard using Dash to visualize 2023 crime data in Vancouver neighborhoods through geolocated maps, trend lines, and bar charts.
   </p>
   </div>
   <div class="card__buttons">

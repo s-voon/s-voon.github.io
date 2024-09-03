@@ -6,7 +6,7 @@ author:
     url: https://s-voon.github.io/
     affiliation: Master of Data Science Student, UBC, 2024
 date: 08-28-2024
-categories: [ML, Data Pipeline ]
+categories: [ML, Data Pipeline, Computer Vision ]
 citation: 
   url: https://s-voon.github.io/blogs/robotic_arms_vision_recognition/
 image: cv_cover.jpg
