@@ -204,6 +204,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#choosing-resnet34-for-the-task" id="toc-choosing-resnet34-for-the-task" class="nav-link" data-scroll-target="#choosing-resnet34-for-the-task">Choosing ResNet34 for the Task</a></li>
   <li><a href="#the-process-from-notebook-to-usable-script" id="toc-the-process-from-notebook-to-usable-script" class="nav-link" data-scroll-target="#the-process-from-notebook-to-usable-script">The Process: From Notebook to Usable Script</a></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#access-the-full-project-on-github" id="toc-access-the-full-project-on-github" class="nav-link" data-scroll-target="#access-the-full-project-on-github">Access the Full Project on GitHub</a></li>
   </ul>
 </nav>
     </div>
@@ -220,8 +221,8 @@ h1.title {
 </style>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="recycle.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Recycle bins</figcaption>
+<p><img src="oscar-yvr.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">The inspiration from YVR.</figcaption>
 </figure>
 </div>
 <p>During a recent visit to Vancouver International Airport (YVR), I was impressed by the camera scanner system at the waste bins. It automatically classified the waste I was about to dispose of into categories such as garbage, plastic, or organics. This sparked an idea: Could I build a similar AI-powered system to help enhance waste sorting in various environments? That is exactly what I did the very next day.</p>
@@ -230,8 +231,8 @@ h1.title {
 <p>I embarked on a journey to develop a waste classification system using deep learning, specifically leveraging a pre-trained ResNet34 model. The goal was to create a full end-to-end pipeline that could accurately classify waste into different categories, helping users to sort their waste more effectively and contribute to reducing contamination in recycling streams.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="oscar-yvr.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">The inspiration from YVR.</figcaption>
+<p><img src="recycle.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Recycle bins</figcaption>
 </figure>
 </div>
 </section>
@@ -265,20 +266,21 @@ h1.title {
 <div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the pre-trained ResNet34 model</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> models.resnet34(pretrained<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Modify the final layer for the specific task</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>num_ftrs <span class="op">=</span> model.fc.in_features</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>model.fc <span class="op">=</span> nn.Linear(num_ftrs, num_classes)  <span class="co"># num_classes represents the waste categories</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Freeze all layers</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> param <span class="kw">in</span> model.parameters():</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    param.requires_grad <span class="op">=</span> <span class="va">False</span></span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Freeze all layers except the last two</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> param <span class="kw">in</span> model.parameters():</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    param.requires_grad <span class="op">=</span> <span class="va">False</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> param <span class="kw">in</span> model.layer4.parameters():</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    param.requires_grad <span class="op">=</span> <span class="va">True</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the loss function and optimizer</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>criterion <span class="op">=</span> nn.CrossEntropyLoss()</span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>optimizer <span class="op">=</span> optim.Adam(model.fc.parameters(), lr<span class="op">=</span><span class="fl">0.001</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Replace the final layer for binary classification</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>num_features <span class="op">=</span> model.fc.in_features</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>model.fc <span class="op">=</span> nn.Sequential(</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    nn.Linear(num_features, <span class="dv">250</span>),</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    nn.ReLU(),</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    nn.Linear(<span class="dv">250</span>, <span class="dv">2</span>)</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the loss function and optimizer</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>criterion <span class="op">=</span> nn.CrossEntropyLoss()</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>optimizer <span class="op">=</span> optim.Adam(model.fc.parameters(), lr<span class="op">=</span><span class="fl">0.001</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p><strong>Training and Evaluation</strong></p></li>
 </ol>
 <p>I then proceeded to train the model using the prepared dataset. The training process involved multiple epochs, where the model’s performance was continuously monitored on the validation set. The training loop included the following steps:</p>
@@ -343,6 +345,11 @@ h1.title {
 <h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
 <p>This project began as a curiosity sparked by an AI system at an airport and evolved into a comprehensive waste classification pipeline. By fine-tuning a ResNet34 model, I developed a robust classifier that can assist in sorting waste more effectively. This project not only contributes to environmental sustainability but also showcases the power of AI in solving real-world problems.</p>
 <p>The end-to-end pipeline I created can be easily deployed in various settings, from airports to office buildings, making it a versatile tool for improving waste management practices. With further refinements and a larger dataset, this system could play a significant role in reducing waste contamination and promoting a cleaner, more sustainable world.</p>
+</section>
+<section id="access-the-full-project-on-github" class="level2">
+<h2 class="anchored" data-anchor-id="access-the-full-project-on-github">Access the Full Project on GitHub</h2>
+<p>If you’re interested in exploring the full codebase or contributing to the project, you can access the complete repository on GitHub. The repository includes all the scripts mentioned above, detailed documentation, and instructions on how to set up and run the project.</p>
+<p>Visit the <a href="https://github.com/s-voon/waste_classification/tree/main">Waste Classification Project Repository</a> on GitHub to dive into the code, download the project, and start classifying waste with AI.</p>
 
 
 </section>
