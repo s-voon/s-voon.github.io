@@ -6,7 +6,7 @@ author:
     url: https://s-voon.github.io/
     affiliation: Master of Data Science Student, UBC, 2023
 date: 02-09-2024
-categories: [ML Project, Virtual Env, Containerization]
+categories: [ML, Containerization]
 citation: 
   url: https://s-voon.github.io/blogs/diabetes_classification/
 image: preview.png
