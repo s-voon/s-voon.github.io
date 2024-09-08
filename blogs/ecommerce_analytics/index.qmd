@@ -457,3 +457,52 @@ def lambda_handler(event, context):
     return 'Successfully processed {} records.'.format(record_count)
 
 ```
+
+### Lambda Privileges and SNS config
+- From the architecture diagram, we can see that lambda need to read from data stream 2 and write to Amazon DynamoDB, CloudWatch, and SNS. 
+
+  - Before creating topic for Amazon SNS, we need to make sure the lambda function have the correct configuration
+  - Go to the lambda function --> configuration --> permissions --> Role name, which bring you to IAM Management Console --> Under Permission policies, add CloudWatchFullAccess, AmazonDynamoDBAccess, AmazonKinesisFullAccess, and AmazonSNSFullAccess. This will grant the lambda function the correct privilleges to access other services.
+- In the environment variable under configuration of lambda function, add 4 key-values pairs:
+  - cloudwatch_metric: ecomm-user-high-vloume-events
+  - cloudwatch_namespcae: ecommerce-namespace-1
+  - dynamodb_control_table: ddb-ecommerce-tab-1
+  - topic_arn: <PASTE HERE YOUR OWN TOPIC ARN>
+- Go to Amazon SNS --> Topics --> Create topic:
+  - Type: Standard
+  - Name: ecommerce-high-severity-incidents
+- Under the created SNS --> create subscription --> protocol = Email-JSON -->Endpoint = <email_address> 
+
+### DynamoDB Data Modelling Table Creation
+- so now KDA will write a record into data stream 2 when a same user view more than 10 items in a sec and we want to write data into the Amazon DynamoDB and send a notification through SNS as well
+- DynamoDB is fast and flexible NoSQL database service for any scale:
+  - handles millions of request per sec
+  - single-digit-milisecond latency
+  - No servers to manage: Maintenance fee, Auto Scaling, On-demand scapacity
+  - Enterprise ready: ACID transactions; encryption at rest; cont backup
+- Go to DyanmoDB --> Create table:
+  - Table name: same as the value to dynamodb_control_table in the environment variables of the lambda function
+  - Partition key: ddb_partition_key (String)
+  - Sort key: ssb_sort_key (number)
+
+## Lambda and Kinesis Integration
+- Go to lambda function --> Add trigger --> Kinesis:
+- Kinesis stream to listen updates on: data-stream-2\
+- Batch size = 1
+
+## ETL using Glue Studio DataBrew and Apache Spark
+- Transfer our csv data into Apache parquet in order to have an optimized version of our data
+  - Go to AWS Glue --> AWS Glue Studio --> create job through 'visual with a source and target':
+  - Data source: S3 bucket --> Transform: ApplyMapping --> Data target: S3 target
+  - In the Data target properties: Select 'parquet' as format and 'Snappy' as  Compression Type and set the S3 Target location as the S3 bucket Url 
+
+- Use Databrew to create data profile to choose a variable as partition key
+
+## Persisting all raw stream in Amazon S3 using Firehose
+- Its always a good idea to preserve raw data in case there is a bug into the analytic process, and you lose those raw data
+
+## Amazon QuickSIght Configuration
+- Go to QuickSight --> Enterprise Edition 
+- Under user profile, go to manage quicksight --> security & permissions --> Manage --> Select S3 bucket and chose our respective bucket
+
+
