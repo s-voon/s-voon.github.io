@@ -8,9 +8,9 @@
 
 <meta name="author" content="Sharon Voon">
 <meta name="dcterms.date" content="2024-02-11">
-<meta name="description" content="Simulating the logs of user purchases, product views, cart history, and the user’s journey to build batch and real-time pipelines">
+<meta name="description" content="Simulating the logs of user purchases, product views, cart history, and the user’s journey to build batch and real-time pipelines tto detect DDos and bot attacks">
 
-<title>Sharon Voon - eCommerce Analytics using AWS</title>
+<title>Sharon Voon - End-to-End Real-Time eCommerce Analytics Pipeline using AWS</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,40 +22,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -150,10 +116,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-page-left">
-      <h1 class="title">eCommerce Analytics using AWS</h1>
+      <h1 class="title">End-to-End Real-Time eCommerce Analytics Pipeline using AWS</h1>
                   <div>
         <div class="description">
-          Simulating the logs of user purchases, product views, cart history, and the user’s journey to build batch and real-time pipelines
+          Simulating the logs of user purchases, product views, cart history, and the user’s journey to build batch and real-time pipelines tto detect DDos and bot attacks
         </div>
       </div>
                           <div class="quarto-categories">
@@ -199,23 +165,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#objectives" id="toc-objectives" class="nav-link active" data-scroll-target="#objectives">Objectives</a></li>
-  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
   <ul class="collapse">
-  <li><a href="#business-overview" id="toc-business-overview" class="nav-link" data-scroll-target="#business-overview">Business Overview</a></li>
-  <li><a href="#data-pipeline" id="toc-data-pipeline" class="nav-link" data-scroll-target="#data-pipeline">Data Pipeline</a></li>
-  <li><a href="#dataset-description" id="toc-dataset-description" class="nav-link" data-scroll-target="#dataset-description">Dataset Description</a></li>
+  <li><a href="#real-time-processing-defending-against-ddos-and-bot-attacks" id="toc-real-time-processing-defending-against-ddos-and-bot-attacks" class="nav-link" data-scroll-target="#real-time-processing-defending-against-ddos-and-bot-attacks">Real-Time Processing: Defending Against DDoS and Bot Attacks</a></li>
+  <li><a href="#batch-time-processing-gaining-deep-insights-into-customer-behavior-product-trends-and-overall-business-performance." id="toc-batch-time-processing-gaining-deep-insights-into-customer-behavior-product-trends-and-overall-business-performance." class="nav-link" data-scroll-target="#batch-time-processing-gaining-deep-insights-into-customer-behavior-product-trends-and-overall-business-performance.">Batch-Time Processing: Gaining deep insights into customer behavior, product trends, and overall business performance.</a></li>
   </ul></li>
+  <li><a href="#aws-services" id="toc-aws-services" class="nav-link" data-scroll-target="#aws-services">AWS Services</a></li>
   <li><a href="#aws-introduction" id="toc-aws-introduction" class="nav-link" data-scroll-target="#aws-introduction">AWS Introduction</a></li>
-  <li><a href="#use-case-simulation" id="toc-use-case-simulation" class="nav-link" data-scroll-target="#use-case-simulation">Use case simulation</a></li>
-  <li><a href="#success-criteria" id="toc-success-criteria" class="nav-link" data-scroll-target="#success-criteria">Success Criteria</a>
+  <li><a href="#architecture" id="toc-architecture" class="nav-link" data-scroll-target="#architecture">Architecture</a></li>
+  <li><a href="#data-stream-and-simulation-setup" id="toc-data-stream-and-simulation-setup" class="nav-link" data-scroll-target="#data-stream-and-simulation-setup">Data Stream and Simulation Setup</a>
   <ul class="collapse">
-  <li><a href="#batch-processing" id="toc-batch-processing" class="nav-link" data-scroll-target="#batch-processing">Batch processing</a></li>
-  <li><a href="#stream-processing" id="toc-stream-processing" class="nav-link" data-scroll-target="#stream-processing">Stream processing</a></li>
-  </ul></li>
-  <li><a href="#amazon-kinesis" id="toc-amazon-kinesis" class="nav-link" data-scroll-target="#amazon-kinesis">Amazon Kinesis</a>
-  <ul class="collapse">
-  <li><a href="#crerating-data-stream" id="toc-crerating-data-stream" class="nav-link" data-scroll-target="#crerating-data-stream">Crerating data stream</a></li>
+  <li><a href="#creating-a-data-stream" id="toc-creating-a-data-stream" class="nav-link" data-scroll-target="#creating-a-data-stream">Creating a Data Stream</a></li>
+  <li><a href="#running-the-simulation-python-app-using-kinesis-stream" id="toc-running-the-simulation-python-app-using-kinesis-stream" class="nav-link" data-scroll-target="#running-the-simulation-python-app-using-kinesis-stream">Running the Simulation Python App Using Kinesis Stream</a></li>
+  <li><a href="#using-aws-glue-and-athena-for-kinesis-partition-key" id="toc-using-aws-glue-and-athena-for-kinesis-partition-key" class="nav-link" data-scroll-target="#using-aws-glue-and-athena-for-kinesis-partition-key">Using AWS Glue and Athena for Kinesis Partition Key</a></li>
+  <li><a href="#configuring-kinesis-data-analytics-with-apache-flink" id="toc-configuring-kinesis-data-analytics-with-apache-flink" class="nav-link" data-scroll-target="#configuring-kinesis-data-analytics-with-apache-flink">Configuring Kinesis Data Analytics with Apache Flink</a></li>
+  <li><a href="#integrate-lambda-and-kinesis" id="toc-integrate-lambda-and-kinesis" class="nav-link" data-scroll-target="#integrate-lambda-and-kinesis">Integrate Lambda and Kinesis</a></li>
+  <li><a href="#etl-with-aws-glue-studio-databrew-and-apache-spark" id="toc-etl-with-aws-glue-studio-databrew-and-apache-spark" class="nav-link" data-scroll-target="#etl-with-aws-glue-studio-databrew-and-apache-spark">ETL with AWS Glue Studio, DataBrew, and Apache Spark</a></li>
+  <li><a href="#persist-raw-stream-data-with-amazon-kinesis-firehose" id="toc-persist-raw-stream-data-with-amazon-kinesis-firehose" class="nav-link" data-scroll-target="#persist-raw-stream-data-with-amazon-kinesis-firehose">Persist Raw Stream Data with Amazon Kinesis Firehose</a></li>
+  <li><a href="#quicksight-configuration" id="toc-quicksight-configuration" class="nav-link" data-scroll-target="#quicksight-configuration">QuickSight Configuration</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -231,125 +198,136 @@ h1.title {
     color: white;
 }
 </style>
-<p>In this AWS Big Data project, I use an eCommerce dataset to simulate the logs of user purchases, product views, cart history, and the user’s journey to build batch and real-time pipelines.</p>
-<section id="objectives" class="level2">
-<h2 class="anchored" data-anchor-id="objectives">Objectives</h2>
+<p>An e-commerce analytics platform serves as the backbone of the data-driven decision-making in online retail. By harnessing data from various souces, such as transaction logs, customer interactions, and website traffic, business can:</p>
 <ul>
-<li>understanding ETL on Big Data</li>
-<li>Introduction to Staging and Data Lake</li>
-<li>Creating IAM Roles and Policies</li>
-<li>Understanding the Dataset</li>
-<li>Setting up AWS CLI</li>
-<li>Understanding Data Streams and Amazon Kinesis</li>
-<li>Understanding Apache Flink</li>
-<li>Creating a Kinesis Data Analytics Application</li>
-<li>Using Glue and Athena to define Partition Key</li>
-<li>Understanding Lambda Functions</li>
-<li>Creating Lambda function for DynamoDB and SNS</li>
-<li>Understanding DynamoDB Data Modelling</li>
-<li>Integrating Lambda and Kinesis</li>
-<li>Performing ETL for Parquet format using Glue DataBrew and Spark</li>
-<li>Creating QuickSight Dashboards</li>
+<li>identify trends and patterns in customer purchasing behaviour</li>
+<li>Optimize pricing strategies to maximize revenue</li>
+<li>Improve customer retention through personalized recommendations</li>
+<li>Detect anomalies that may signal fraudalent activities or distributed denial of service (DDoS) and bott attacks</li>
 </ul>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>In this blog, I will walk you through how I built an ETL pipeline for eCommerce analytics using AWS services. This project mimics real-life scenarios by leveraging Amazon Kinesis for real-time data streaming and processing. We will build a pipeline that ingests data in real-time from simulated user clickstreams and processes it using various AWS services to generate insights on user behavior, product trends, and more.</p>
+<section id="real-time-processing-defending-against-ddos-and-bot-attacks" class="level3">
+<h3 class="anchored" data-anchor-id="real-time-processing-defending-against-ddos-and-bot-attacks">Real-Time Processing: Defending Against DDoS and Bot Attacks</h3>
+<p>Real-time processing is essential for safeguarding your e-commerce platform, especially in the face of increasing threats like DDoS attacks and bot-driven traffic spikes. These attacks can harm your business by disrupting services, slowing down the platform, or inflating costs.</p>
+<p>To address these challenges, we will leverage AWS services such as AWS Lambda, Amazon DynamoDB, Amazon CloudWatch, and AWS SNS to build an automated pipeline that detects and mitigates these attacks in real-time.</p>
+<p>Key Components of the Real-Time Processing Pipeline:</p>
+<ol type="1">
+<li><p>AWS Lambda: Handles the real-time execution of code to process incoming traffic data, detect anomalies, and trigger alerts.</p></li>
+<li><p>Amazon DynamoDB: Stores real-time traffic data, allowing rapid lookups and comparisons to identify suspicious patterns.</p></li>
+<li><p>Amazon CloudWatch: Monitors traffic and application performance, enabling detection of unusual activity, such as traffic spikes indicative of bot or DDoS attacks.</p></li>
+<li><p>AWS SNS (Simple Notification Service): Sends instant notifications to administrators or security teams when abnormal traffic patterns are detected, allowing immediate action.</p></li>
+</ol>
+<p>This real-time processing pipeline ensures your e-commerce platform remains secure, stable, and ready to scale while mitigating potential threats in real time.</p>
 </section>
-<section id="overview" class="level2">
-<h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<section id="business-overview" class="level3">
-<h3 class="anchored" data-anchor-id="business-overview">Business Overview</h3>
-<p>Ecommerce analytics is the process of collecting data from all of the sources affect a certain shop. Analysts can then utilize this information to deduce changes in customer behavior and online shopping patterns. Ecommerce analytics spans the whole customer journey, from discovery through acquisition, conversion, and eventually rertention and support.</p>
-<p>In this project, we will use an eCommerce Dataset to simulate the logs of user purchase, product views, cart history, and the user’s journey on the online platform to create two analytical pipelines, Batch and Real-time. The Batch processing will involve data ingestion, Lake House architecture, processing, visualization using Amazon Kinesis, Glue, S3, and QuickSight to daw insights regarding the following: - Unique visitors per day - During a certain time, the users add products to their carts but don’t buy them - Top categories per hour or weekday (i.e.&nbsp;to promote discounts based on trends) - To know which brands need more marketing</p>
-<p>The Real-time channel involves detecting Distributed denial of Services(DDoS) and Bot attacks using AWS Lambda, DynamoDB, CloudWatch, and AWS SNS.</p>
+<section id="batch-time-processing-gaining-deep-insights-into-customer-behavior-product-trends-and-overall-business-performance." class="level3">
+<h3 class="anchored" data-anchor-id="batch-time-processing-gaining-deep-insights-into-customer-behavior-product-trends-and-overall-business-performance.">Batch-Time Processing: Gaining deep insights into customer behavior, product trends, and overall business performance.</h3>
+<p>Batch processing is ideal for analyzing large volumes of historical data, enabling businesses to extract valuable insights that drive strategic decisions. In this blog, we’ll design a batch processing pipeline using Amazon Kinesis, AWS Glue, Amazon S3, and Amazon QuickSight. This architecture will provide insights into key metrics such as unique daily visitors, product engagement trends, and category performance.</p>
+<p>Key Components of the Batch Processing Pipeline:</p>
+<ol type="1">
+<li><p>Amazon Kinesis: Ingests real-time streaming data from various e-commerce sources, such as user activity logs, transaction records, and website events. This data is then batched and stored for further processing.</p></li>
+<li><p>AWS Glue: Extracts, transforms, and loads (ETL) data from the ingested raw data, ensuring it is properly formatted and cleaned. AWS Glue automates the schema discovery process and builds data catalog tables, making it easy to transform data into an analytics-ready state.</p></li>
+<li><p>Amazon S3: Acts as the data lake, where the processed and cleaned data is stored. Amazon S3 provides scalable and cost-effective storage for large datasets, making it ideal for handling the volume of data generated by an e-commerce platform.</p></li>
+<li><p>Amazon QuickSight: A powerful visualization tool that connects to the data in Amazon S3 and creates dashboards and reports. QuickSight enables you to visualize key metrics, such as traffic trends, top categories, and brand performance, in an easy-to-digest format. Decision-makers can use these reports to track KPIs, identify patterns, and make data-driven decisions.</p></li>
+</ol>
 </section>
-<section id="data-pipeline" class="level3">
-<h3 class="anchored" data-anchor-id="data-pipeline">Data Pipeline</h3>
-<p>A data pipeline is a technique for transferring data from one system to another. The data may or may not be updated, and it maybe handled in real-time (or streaming) rather than in batches. The data pipeline encompasses everything from harvesting or acquiring data using various methods to storing raw data, cleaning, validating, and transforming data into a query-worthy format, displaying KPIs, and managing the above process</p>
 </section>
-<section id="dataset-description" class="level3">
-<h3 class="anchored" data-anchor-id="dataset-description">Dataset Description</h3>
-<p>This dataset contains user behavioral information from a large multi-category online store along with fields such as event_time, event_type, product_id, price, user_id. Each row in the file represents one of the following event types: - View - Cart - Removed from Cart - Purchase</p>
-</section>
+<section id="aws-services" class="level2">
+<h2 class="anchored" data-anchor-id="aws-services">AWS Services</h2>
+<p>Before we dive into the service, I would like to credit the data source we used in this project which can be found <a href="https://www.kaggle.com/datasets/mkechinov/ecommerce-behavior-data-from-multi-category-store">here</a>.</p>
 </section>
 <section id="aws-introduction" class="level2">
 <h2 class="anchored" data-anchor-id="aws-introduction">AWS Introduction</h2>
 <ol type="1">
-<li><p>Amazon S3: an object storage service that provides manufacturing scalability, data availability, security and performance. Users may save and retrieve any quantity of data using Amazon S3 at any time and from any location.</p></li>
-<li><p>AWS Glue: A serverless data integration service makes it easy to discover, prepare, adn combine data for analytics, machine learning, and application development. It runs Spark/Python code without managing Infrastructure at a nominal cost. You pay only during the run time of the job. ALso, you pay storage costs fo Data Catalog objects. Tables may be added to the AWS Glue Data Catalog using a Crawler. The majorrity of the AWS Glue users employ this strategy. In a single un, a crawler can crawl numerous data repositories. The crawler adds or modified one or more tables in your Data Catalog after it’s finished.</p></li>
-<li><p>AWS Athena: An interactive query service for S3 in which there is no need to load data, and it stays in S3. It is serverless and supports many data format, e.g., CSV, JSON, ORC, Parquet, AVRO.</p></li>
-<li><p>Apache Flink: A scalable data analytics platform and distributed processing engine. Flink may be used to handle massive data streams and give real-time analytical insights about the processed data to your streaming application. FLink is built to work in a variety of cluster setups, with in-memory calculations of any size. For distributed computations over data streams, Flink also offer communication, fault tolerance, and data distribution. Flink applications use unbounded or bounded data sets to process streams of events. Unbounded streams have no fixed termination and are handled indefinitely. Bounded streams have a defined beginning and endpoint and may be handles in batches.</p></li>
-<li><p>Amazon Kinesis Data Stream: A real-time data collection and prcoessing service from Amazon. Kinesis Data Stream apps are data-processing application that may be created. Data Firehose is part of the Kinesis streaming data platform, which also includes Kinesis Data STrerams, Kinesis Video Sterams, and Amazon Kinesis Data Analytics. When using Kinesis Data Firehose, the user does not need to develop apps or manage resources. Configure the data producers to send data to Kinesis Data Firehose and the data will be automatically transferred to the specified destination. Kinesis Data Firehose may also be used to transform data before delivering it.</p></li>
-<li><p>QuickSight: A scalable, serverless embeddable, machine learning-powered business intelligence (BI) service built for the cloud. It is the first BI service to offer pay-per-session pricing, where you only pay when your users access their dashboards or reports, making it cost-effectively for large-scale deployments. It can connect to various sources like Redshift, S3, Dynamo, RDS, files like JSON text, CSV, TSV, Jira, Salesforce, and on-premises oracale SQL-server</p></li>
-<li><p>AWS Glue DataBrew: A visual data preparation tool that allow users to clean and normalize data without writing any code. When compared to custom-created data preparation, DataBrew helps minimize the time it takes to prepare data for analytics and machine learning. Many pre-built transformations are available to automate data preparation activities such as screening anomalies, transforming data to standard formats, and rectifying erroneous values.</p></li>
-<li><p>Amazon DynamoDB: A fully managed key-value NoSQL databse service that delivers quick and predictable performance while also allowing for seamless scaling. DyanamoDB relieves developers of the administrative responsibilities associated with running and growing a distributed database. DynamoDB allows you to design databse tables that can store and retrieve any quantity of data while also serving any degree of request volume. You may increase or decrease the throughput capacity of your tables without experiencing downtime or performance reduction.</p></li>
+<li><p>Amazon S3: A scalable, secure object storage service for saving and retrieving unlimited data from anywhere, at any time.</p></li>
+<li><p>AWS Glue: A serverless data integration service for ETL tasks, enabling data discovery, preparation, and merging for analytics and machine learning. It runs Spark/Python code without infrastructure management, charging based on job runtime and data catalog storage. Users often leverage Crawlers to automatically update tables in the AWS Glue Data Catalog.</p></li>
+<li><p>AWS Athena: A serverless, interactive query service for querying data stored in S3, supporting multiple formats like CSV, JSON, ORC, Parquet, and AVRO.</p></li>
+<li><p>Apache Flink: A scalable platform for real-time data analytics and distributed processing, handling both unbounded (continuous) and bounded (batch) data streams, with built-in fault tolerance and in-memory computation.</p></li>
+<li><p>Amazon Kinesis Data Streams: A real-time data collection and processing service that supports building custom data-processing applications. Kinesis Data Firehose simplifies data delivery to destinations and can also transform data before sending.</p></li>
+<li><p>Amazon QuickSight: A scalable, serverless business intelligence service powered by machine learning. It supports pay-per-session pricing, connects to diverse data sources, and delivers interactive dashboards and reports.</p></li>
+<li><p>AWS Glue DataBrew: A visual data preparation tool that simplifies cleaning and transforming data without code, offering pre-built transformations for faster data prep.</p></li>
+<li><p>Amazon DynamoDB: A fully managed NoSQL database providing fast, predictable performance with seamless scaling, designed to handle any volume of data and traffic without downtime.</p></li>
 </ol>
 </section>
-<section id="use-case-simulation" class="level2">
-<h2 class="anchored" data-anchor-id="use-case-simulation">Use case simulation</h2>
+<section id="architecture" class="level2">
+<h2 class="anchored" data-anchor-id="architecture">Architecture</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="architecture.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">The overview of data pipeline for both the real-time processing and batch-time processing</figcaption>
+</figure>
+</div>
+<p>The raw data stream will first be ingested into Amazon Kinesis Data Stream (stream1), which will then stream the data to Amazon Kinesis Data Analytics for processing. Here, an Apache Flink application will be utilized to analyze the data and detect any potential DDoS attacks. The clean, filtered data will then be sent to another Amazon Kinesis Data Stream (stream2).</p>
+<p>The Flink application will be built using SQL on Amazon Kinesis Data Analytics, and to manage metadata, we will use the AWS Glue Data Catalog.</p>
+<p>Next, stream2 will trigger an AWS Lambda function that will send Amazon SNS notifications to stakeholders, and fraudulent transaction details will be logged in a DynamoDB table for further analysis.</p>
+<p>However, as seen in the architecture diagram, the raw data entering Kinesis Data Stream (stream1) is not stored anywhere. This presents a challenge: if a bug is later found and fixed in the Apache Flink application, the previously processed data cannot be re-processed, as we have no backup of the raw data. To mitigate this, it’s essential to store a copy of the raw data for future reprocessing or batch processing.</p>
+<p>To address this, we will also route the incoming stream from Kinesis Data Stream (stream1) to Kinesis Firehose, which will store the raw data in Amazon S3. Using AWS Glue, we will catalog this data and run Glue ETL jobs to clean and process it. This enables us to further analyze the data through Amazon Athena and leverage QuickSight to build insightful dashboards for visualization.</p>
+</section>
+<section id="data-stream-and-simulation-setup" class="level2">
+<h2 class="anchored" data-anchor-id="data-stream-and-simulation-setup">Data Stream and Simulation Setup</h2>
+<section id="creating-a-data-stream" class="level3">
+<h3 class="anchored" data-anchor-id="creating-a-data-stream">Creating a Data Stream</h3>
 <ul>
-<li><p>Brand’s popularity: to know which brands I need to invest more marketing</p></li>
-<li><p>User’s journey: why after 11pm, the users add products to their carts, but dont buy them in the end</p></li>
-<li><p>Know our customers: unique visitors per day; top categories per hour or weekday (i.e.&nbsp;to promote discounts basedo on trends)</p></li>
-<li><p>systems are normally designed on constant patterns which is not scalable. Latency increase with peaks and latency in data leads to useless data</p></li>
-<li><p>Timely decisions requiers new data in minutes as data loses value quickly over time</p></li>
+<li>Navigate to AWS Kinesis and select “Create Data Stream.”</li>
+<li>Name the data stream: ecommerce-raw-user-activity-stream-1.</li>
+<li>Set the capacity mode to “On-Demand” for variable throughput requirements.</li>
 </ul>
 </section>
-<section id="success-criteria" class="level2">
-<h2 class="anchored" data-anchor-id="success-criteria">Success Criteria</h2>
+<section id="running-the-simulation-python-app-using-kinesis-stream" class="level3">
+<h3 class="anchored" data-anchor-id="running-the-simulation-python-app-using-kinesis-stream">Running the Simulation Python App Using Kinesis Stream</h3>
+<p>If you don’t have a local IDE, use AWS Cloud9, a cloud-based IDE for coding, running, and debugging:</p>
 <ul>
-<li>Data ingestion: simulate a NRT stream and scheduled bulk/batch</li>
-<li>Lake House and Stream design: Design and build a new Lake house architecture, including Batch and NRT laters</li>
-<li>AWS CLoud</li>
-<li>Real-Time decisions: trigger mechanism based on stream</li>
-<li>Scalabilitty: the data architecture should scale efficiently</li>
-<li>Reporting: Dashboard withh relevant Business Data</li>
+<li>Create a Cloud9 Environment: Name: cloud9-ecommerce-ide-dev-1 Instance Type: t3.small (2 GiB RAM + 2 vCPU) Platform: Amazon Linux 2 Cost-Saving Setting: Automatically stop after 30 minutes of inactivity</li>
+<li>Set Up Permissions: Create an IAM role for Cloud9 with permissions to access Kinesis and S3: Role Name: ecommerce-ec2-simulation-app-iam-role Policies: AmazonS3FullAccess, AmazonKinesisFullAccess Attach this IAM role to your Cloud9 instance.</li>
+<li>Simulation Setup: Create a new folder in Cloud9: ecomm-simulation-app-v1. Save the simulation code as stream-data-app-simulation.py in this folder. Install additional packages if needed: pip install boto3 -t .. The simulation app will write to the Kinesis stream and read from an S3 bucket. The default retention period for the data stream is 1 day.</li>
 </ul>
-<ol type="1">
-<li><p>How to stream data by simulating real data producer: Amazon Kinesis and Python</p>
-<ul>
-<li>determine which products are being sold in near real-time</li>
-</ul></li>
-<li><p>How to process that incoming stream and create triggering mechanisms: Python, Apache Flink, Amazon S3, AWS SNS, AWS Lambda</p>
-<ul>
-<li>if same user_id views &gt;10 products/sec, send immediately an alert -&gt; possible BOT/DDos Attack</li>
-</ul></li>
-<li><p>How to process hourly data in batch layer: AWS DataSync tasks</p></li>
-<li><p>Business Intelligence layher: Amazon QuickSIght for BI reporting</p></li>
-</ol>
-<p>Dataset from kaggle: https://www.kaggle.com/datasets/mkechinov/ecommerce-behavior-data-from-multi-category-store</p>
-<p>Option 1: download locally and copy to AWS Option 2: start with AWS, you can download it directly Option 3: use smaller dataset , confirm the data model is the same</p>
-<p>Option 1: Set up AWS CLI; Create S3 bucket; Copy dataset to AWS</p>
-<p>create a s3 bucket</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">aws</span> Configure</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">aws</span> s3 ls <span class="co"># list all s3 bucket</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">aws</span> s3 ls s3://ecommerce-raw-euwest-14317-dev/ <span class="co">#list objects inside the bucket</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> downloads</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ex">aws</span> s3 cp 2019-Nov.csv.zip s3://ecommerce-raw-euwest-14317-dev/ <span class="co"># copy the zip file in download folder to the s3 bucket</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Now, I have a csv in a S3 bucket and I will want a python code to read the CSV to simulate streaming. I want to deploy a Kinesis stream.</p>
-<section id="batch-processing" class="level3">
-<h3 class="anchored" data-anchor-id="batch-processing">Batch processing</h3>
-<p>Data scope: queries or processing overl all or most of the data in the dataset Data size: Lage batches of data Performance: Latencies in min to hours Analysis: Complex analytics</p>
 </section>
-<section id="stream-processing" class="level3">
-<h3 class="anchored" data-anchor-id="stream-processing">Stream processing</h3>
-<p>Data scope: Queries or processing over data within a rolling time window, or on just the most recent data rrecord Data size: Individual record or micro batches consisting of a few records Performance: Requires latency in the order of seconds or milliseconds Analysis: Simple response functions, aggregates, and rolling metrics</p>
-</section>
-</section>
-<section id="amazon-kinesis" class="level2">
-<h2 class="anchored" data-anchor-id="amazon-kinesis">Amazon Kinesis</h2>
+<section id="using-aws-glue-and-athena-for-kinesis-partition-key" class="level3">
+<h3 class="anchored" data-anchor-id="using-aws-glue-and-athena-for-kinesis-partition-key">Using AWS Glue and Athena for Kinesis Partition Key</h3>
 <ul>
-<li>easily collect, process, and analyze data streams in real time</li>
+<li>Partition Key Selection: Read data from CSV in S3 and push it to Kinesis in JSON format. Choose a partition key with good cardinality (e.g., category_id), aiming for a balanced load across shards.</li>
+<li>AWS Glue: Create a Glue Crawler to define the schema: - Crawler Name: ecommerce-user-activity-crawler-1 - Source Type: Data stores (S3) - Include Path: ecommerce-raw-euwest1-14317-dev/ecomm_user_activity_sample - IAM Role: AWSGlueServiceRole-ecommerce-user-activity - Database Name: db_ecommerce Run the crawler to create a table. This will allow querying in Athena.</li>
 </ul>
-<ol type="a">
-<li>Data Streams: Collect and store data stream for analytics</li>
-<li>Data Firehose: Load data streams onto AWS data stores</li>
-<li>Data Analytics: Analyze data streams with Amazon Kinesis Data Analytics Studio/ Apache Flink</li>
-<li>Video Streams: Collect and store video streams for analytics</li>
-</ol>
-<p>so now we have a python application pushing our CSV data into data stream 1 - I have an input which needs to be captured and sent data to Kinesis Data streams –&gt; then data stream is ingested and stored for processing in Kinesis Data Analytics/ Firehose / EC2/ Lambda –&gt; output: analyze streaming data using your favourite BI tools</p>
-<section id="crerating-data-stream" class="level3">
-<h3 class="anchored" data-anchor-id="crerating-data-stream">Crerating data stream</h3>
-<ul>
-<li>go tto</li>
-</ul>
+</section>
+<section id="configuring-kinesis-data-analytics-with-apache-flink" class="level3">
+<h3 class="anchored" data-anchor-id="configuring-kinesis-data-analytics-with-apache-flink">Configuring Kinesis Data Analytics with Apache Flink</h3>
+<pre><code>- Kinesis Data Analytics:
+    Allows real-time analytics on streaming data.
+    Supports multiple data sources and output sinks.
+- Apache Flink:
+  A framework for stateful computations on unbounded and bounded data streams.
+- Set Up Kinesis Data Analytics:
+  - Create a new data stream: ecommerce-raw-user-activity-stream-2.
+  - Go to AWS Kinesis -&gt; Analytics Applications -&gt; Studio -&gt; Create Studio Notebook:
+    Notebook Name: ecommerce-streaming-app-v1
+    Runtime: Apache Flink 1.13
+    Source: ecommerce-raw-user-activity-stream-1
+    Destination: ecommerce-raw-user-activity-stream-2
+    S3 Code Destination: ecommerce-raw-euwest1-14317-dev
+  - Apache Flink App:
+    Ensure IAM role permissions for Glue are set.</code></pre>
+<p>### Lambda Functions for Data Processing - Create Lambda Functions: Set up Lambda to read from the second stream and write to DynamoDB, CloudWatch, and SNS. - Lambda Configuration: Permissions: Attach policies for CloudWatch, DynamoDB, Kinesis, and SNS. Environment Variables: cloudwatch_metric: ecomm-user-high-volume-events cloudwatch_namespace: ecommerce-namespace-1 dynamodb_control_table: ddb-ecommerce-tab-1 topic_arn: [Your SNS Topic ARN] Create SNS Topic: Name: ecommerce-high-severity-incidents Subscription: Email-JSON DynamoDB Table: Table Name: Same as dynamodb_control_table Partition Key: ddb_partition_key (String) Sort Key: ddb_sort_key (Number)</p>
+</section>
+<section id="integrate-lambda-and-kinesis" class="level3">
+<h3 class="anchored" data-anchor-id="integrate-lambda-and-kinesis">Integrate Lambda and Kinesis</h3>
+<pre><code>In Lambda, add a trigger for ecommerce-raw-user-activity-stream-2 with a batch size of 1.</code></pre>
+</section>
+<section id="etl-with-aws-glue-studio-databrew-and-apache-spark" class="level3">
+<h3 class="anchored" data-anchor-id="etl-with-aws-glue-studio-databrew-and-apache-spark">ETL with AWS Glue Studio, DataBrew, and Apache Spark</h3>
+<pre><code>- Convert CSV to Parquet:
+  Use AWS Glue Studio to create a job that reads CSV from S3, transforms it, and writes Parquet files back to S3.
+- Use DataBrew:
+  Create a data profile to determine optimal partition key variables.</code></pre>
+</section>
+<section id="persist-raw-stream-data-with-amazon-kinesis-firehose" class="level3">
+<h3 class="anchored" data-anchor-id="persist-raw-stream-data-with-amazon-kinesis-firehose">Persist Raw Stream Data with Amazon Kinesis Firehose</h3>
+<pre><code>Preserve raw data in S3 to ensure no loss during analytics processes.</code></pre>
+</section>
+<section id="quicksight-configuration" class="level3">
+<h3 class="anchored" data-anchor-id="quicksight-configuration">QuickSight Configuration</h3>
+<pre><code>Go to QuickSight -&gt; Enterprise Edition.
+Manage permissions to access the relevant S3 bucket.</code></pre>
 
 
 </section>
@@ -357,14 +335,15 @@ h1.title {
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{voon2024,
   author = {Voon, Sharon},
-  title = {eCommerce {Analytics} Using {AWS}},
+  title = {End-to-End {Real-Time} {eCommerce} {Analytics} {Pipeline}
+    Using {AWS}},
   date = {2024-02-11},
   url = {https://s-voon.github.io/blogs/ecommerce_analytics/},
   langid = {en}
 }
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-voon2024" class="csl-entry quarto-appendix-citeas" role="listitem">
-Voon, Sharon. 2024. <span>“eCommerce Analytics Using AWS.”</span>
-February 11, 2024. <a href="https://s-voon.github.io/blogs/ecommerce_analytics/">https://s-voon.github.io/blogs/ecommerce_analytics/</a>.
+Voon, Sharon. 2024. <span>“End-to-End Real-Time eCommerce Analytics
+Pipeline Using AWS.”</span> February 11, 2024. <a href="https://s-voon.github.io/blogs/ecommerce_analytics/">https://s-voon.github.io/blogs/ecommerce_analytics/</a>.
 </div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
