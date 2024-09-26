@@ -3,6 +3,7 @@
     "listing": "/blogs.html",
     "items": [
       "/blogs/autopredictor_package/index.html",
+      "/blogs/ads_hypothesis_testing.qmd/index.html",
       "/blogs/diabetes_classification/index.html",
       "/blogs/robotic_arms_vision_recognition/index.html",
       "/blogs/waste_classification/index.html"
